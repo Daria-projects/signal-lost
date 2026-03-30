@@ -1,13 +1,13 @@
 :root {
   /* Background color */
-  --color-bg: #cfceca;
+  --color-bg: #c3ffdd;
 
   /* Header background color */
   --color-head-bg: #625e5c;
 
   /* Logotype */
   --color-logotype-bg: #2a2828;
-  --color-text-logotype: #c1bfb8;
+  --color-text-logotype: #fdd74b;
   --font-logotype-size: 1rem;
 
   /* Global menu */
