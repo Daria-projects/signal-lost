@@ -1,13 +1,13 @@
 :root {
   /* Background color */
-  --color-bg: #c3ffdd;
+  --color-bg: #6d245a;
 
   /* Header background color */
-  --color-head-bg: #625e5c;
+  --color-head-bg: #f09e9a;
 
   /* Logotype */
   --color-logotype-bg: #2a2828;
-  --color-text-logotype: #fdd74b;
+  --color-text-logotype: #44affe;
   --font-logotype-size: 1rem;
 
   /* Global menu */
@@ -28,7 +28,7 @@
   --font-sub1-size: 1rem;
 
   /* Headlines (color) */
-  --color-headline-bg: #4b4545;
+  --color-headline-bg: #214993;
 
   /* Tekst */
   --color-text: #000;
@@ -57,5 +57,5 @@
   --font-weight-light: 200;
 
   /* Infographics background colors*/
-  --color-info-bg: #676161;
+  --color-info-bg: #000000;
 }

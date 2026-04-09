@@ -40,3 +40,8 @@
 .info-box:nth-of-type(2n) {
   background-color: var(--color-card-bg-inverted);
 }
+#geo_pin:hover,
+#ear_left:hover,
+#portal:hover {
+  cursor: pointer;
+}
