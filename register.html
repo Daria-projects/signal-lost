@@ -1,76 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/burger.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="icon" type="image/png" href="img/change_me.png" />
+    <title>Emergency Site</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/general.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/burger.css">
-  <link rel="stylesheet" href="css/cards.css">
-  <link rel="stylesheet" href="css/form.css">
-  <link rel="icon" type="image/png" href="img/fav.png">
-  <title>Emergency Site</title>
-</head>
+  <body id="register">
+    <header>
+      <nav>
+        <div id="logotype-wrapper" class="logo">
+          <a href="index.html"> LOGO-TYPE </a>
+        </div>
+        <ul class="menu">
+          <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
+          <li><a class="menuItem" href="register.html">Indberet</a></li>
+        </ul>
+        <button class="burger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </nav>
+    </header>
 
-<body id="register">
-  <header>
-    <nav>
-      <div id="logotype-wrapper" class="logo">
-        <a href="index.html"> LOGO-TYPE </a>
-      </div>
-      <ul class="menu">
-        <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
-        <li><a class="menuItem" href="register.html">Indberet</a></li>
-      </ul>
-      <button class="burger">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </button>
-    </nav>
-  </header>
+    <main>
+      <h1>INDBERET</h1>
 
-  <main>
-    <h1>INDBERET</h1>
-    <section id="form-section">
-      <article id="form-info">
-        <h2>Overskrift</h2>
-        <p>Tekst</p>
-      </article>
-      <form id="webform"></form>
-    </section>
-    <section id="form-summary">
-      <h2>Summary</h2>
-      <article>
-        <p class="placeholder">Opsummering</p>
-      </article>
-    </section>
-  </main>
-  <footer>
-    <nav>
-      <ul>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-    </nav>
-  </footer>
-</body>
+      <section id="form-section">
+        <article id="form-info">
+          <h2>Registrering af drømlækagehændelse</h2>
+          <p>
+            Dette formular initierer <strong>en officiel drømlækagestatus-rapport</strong>. Alle felter er <strong>obligatoriske</strong>. Unøjagtigheder kan resultere i forkert diagnose — eller permanent tab af narrativ kohærens.<br />
+            <strong>Behandlingstid: 3–5 søvncyklusser.</strong>
+          </p>
+        </article>
 
+        <h3>Formular DL — Drømlækage Nødberedskab</h3>
+
+        <form id="webform">
+          <!-- 01 PATIENTIDENTIFIKATION -->
+          <fieldset id="identification">
+            <legend>01 / Patientidentifikation</legend>
+
+            <div class="formcontainer">
+              <div class="form-group">
+                <label class="blok" for="navn">Drømnavn <span class="req">*</span></label>
+                <input type="text" id="navn" name="navn" required />
+                <p class="field-info">Det navn du kender dig selv som i drømmene.</p>
+              </div>
+              <div class="form-group">
+                <label class="blok" for="juridisk">Juridisk navn</label>
+                <input type="text" id="juridisk" name="juridisk" />
+                <p class="field-info">Valgfrit. Reducerer præcisionen med op til 34%.</p>
+              </div>
+            </div>
+
+            <div class="formcontainer formcontainer--spaced">
+              <div class="form-group">
+                <label class="blok" for="email">Nødkontakt-email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required />
+                <p class="field-info">Angiv en person der kan bekræfte din vågentilstand. De vil ikke blive kontaktet — feltet tjener som anker mod narrativ drift.</p>
+              </div>
+              <div class="form-group">
+                <label class="blok" for="tlf">Telefon</label>
+                <input type="tel" id="tlf" name="tlf" />
+                <p class="field-info">Format: +45 XX XX XX XX</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 02 LÆKAGETYPE -->
+          <fieldset id="laekagetype">
+            <legend>02 / Primær lækagetype</legend>
+
+            <div class="form-group">
+              <p>Vælg den dominerende lækageform <span class="req">*</span></p>
+              <p class="field-info warn">Vælg den type som opstod først. Systemet opererer med lukkede kategorier — "andet" er ikke en gyldig klassifikation.</p>
+
+              <div>
+                <input type="radio" id="type-kronologisk" name="laekagetype" value="kronologisk" required />
+                <label for="type-kronologisk">
+                  Kronologisk kollaps
+                  <span class="option-sub">Hændelsesrækkefølge kan ikke rekonstrueres</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="type-figurativ" name="laekagetype" value="figurativ" required />
+                <label for="type-figurativ">
+                  Figurativ overblødning
+                  <span class="option-sub">Kendte ansigter optræder med forkert adfærd</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="type-sceneskift" name="laekagetype" value="sceneskift" required />
+                <label for="type-sceneskift">
+                  Sceneskift uden overgang
+                  <span class="option-sub">Pludselige miljøskift uden kausalitet</span>
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="type-ekstern" name="laekagetype" value="ekstern" required />
+                <label for="type-ekstern">
+                  Ekstern realitetsintrusion
+                  <span class="option-sub">Vågentilstandselementer trænger ind i drømmescenarium</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 03 KONTAMINATIONSGRAD -->
+          <fieldset id="kontamination">
+            <legend>03 / Kontaminationsgrad &amp; varighed</legend>
+
+            <div class="form-group">
+              <label class="blok" for="grad">Kontaminationsgrad <span class="req">*</span></label>
+              <select id="grad" name="grad" required>
+                <option value="" disabled selected>— Vælg højeste observerede grad —</option>
+                <option value="0">Grad 0 — Ingen overblødning registreret</option>
+                <option value="1">Grad 1 — Sporadiske billeder ved opvågning</option>
+                <option value="2">Grad 2 — Vedvarende stemning i vågentilstand</option>
+                <option value="3">Grad 3 — Fragmenteret handlekraft (over 4 timer)</option>
+                <option value="4">Grad 4 — Identitetstab / systemkritisk tilstand</option>
+              </select>
+              <p class="field-info">Vurder omfanget af drømmemateriale der er trængt ind i vågentilstand inden for de seneste 72 timer.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="varighed">Estimeret varighed af aktiv lækage: <span id="range-value">12</span> timer</label>
+              <input type="range" id="varighed" name="varighed" min="0" max="72" step="1" value="12" />
+              <div class="range-labels">
+                <span>0 timer</span>
+                <span>24 timer</span>
+                <span>48 timer</span>
+                <span>72+ timer</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 04 SYMPTOMER -->
+          <fieldset id="symptomer">
+            <legend>04 / Observerede symptomer</legend>
+
+            <div class="form-group">
+              <p>Markér alle forekommende symptomer <span class="req">*</span></p>
+              <div>
+                <input type="checkbox" id="symptom-dejavu" name="symptom" value="dejavu" />
+                <label for="symptom-dejavu">Gentagne déjà vu-episoder</label>
+              </div>
+              <div>
+                <input type="checkbox" id="symptom-ansigter" name="symptom" value="ansigter" />
+                <label for="symptom-ansigter">Ukendte ansigter i periferien</label>
+              </div>
+              <div>
+                <input type="checkbox" id="symptom-sprog" name="symptom" value="sprog" />
+                <label for="symptom-sprog">Besvær med at formulere sig verbalt</label>
+              </div>
+              <div>
+                <input type="checkbox" id="symptom-tyngde" name="symptom" value="tyngde" />
+                <label for="symptom-tyngde">Fysisk tyngdefornemmelse</label>
+              </div>
+              <div>
+                <input type="checkbox" id="symptom-arkitektur" name="symptom" value="arkitektur" />
+                <label for="symptom-arkitektur">Ukendt arkitektur i kendte rum</label>
+              </div>
+              <div>
+                <input type="checkbox" id="symptom-tid" name="symptom" value="tid" />
+                <label for="symptom-tid">Tidsdistortion (timer føles som minutter)</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="blok" for="beskriv">Beskriv lækagen <span class="req">*</span></label>
+              <p class="field-info">Beskriv lækagen i kronologisk rækkefølge. Undgå metaforer — systemet tolker dem bogstaveligt.</p>
+              <textarea id="beskriv" name="beskriv" required></textarea>
+              <p class="field-info warn">Minimum 3 sætninger. Beretninger under 3 sætninger behandles som uafsluttede og arkiveres automatisk uden sagsbehandling.</p>
+            </div>
+          </fieldset>
+
+          <!-- SUBMIT -->
+          <p class="field-info warn submit-disclaimer">
+            Ved indsendelse accepterer du at rapporten indgår i det kollektive drømmekatalog. Anonymisering kan ikke garanteres på tværs af søvnstadier. Systemet forbeholder sig ret til at rekonstruere din narrative sammenhæng uden forudgående
+            samtykke.
+          </p>
+          <button type="submit" id="submit-button">Indsend nødrapport &#8594;</button>
+        </form>
+      </section>
+
+      <section id="form-summary">
+        <h2>Sagsopsummering</h2>
+        <article>
+          <p class="placeholder">Opsummering vises her efter indsendelse.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script src="js/burger.js"></script>
+    <script src="js/forms.js"></script>
+  </body>
 </html>
