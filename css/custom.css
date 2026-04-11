@@ -1,61 +1,94 @@
 :root {
-  /* Background color */
-  --color-bg: #6d245a;
+  /* ── PALETTE (from main SVG illustration) ── */
+  --color-bg: #0d0b14; /* near-black background */
+  --color-surface: #16132a; /* slightly lighter surface */
+  --color-surface-mid: #1e1b35; /* fieldset background */
 
-  /* Header background color */
-  --color-head-bg: #f09e9a;
+  --color-head-bg: #3d5a8a; /* blue — header/footer */
+  --color-headline-bg: #3d5a8a; /* blue — headline bars */
+  --color-accent: #e85d5d; /* coral/red — accents, req, warn */
+  --color-accent-muted: #8899bb; /* muted blue — mist/cloud tone */
 
-  /* Logotype */
-  --color-logotype-bg: #2a2828;
-  --color-text-logotype: #44affe;
-  --font-logotype-size: 1rem;
+  --color-logotype-bg: #0a0a12;
+  --color-text-logotype: #6b8fc4;
 
-  /* Global menu */
-  --color-menu-bg: #5a5b5e;
-  /* Links */
-  --color-link-bg: #78766e;
-  --color-link-hover: #fff;
-  --color-link-active: #99958f;
-  --border-radius-links: 1px;
+  --color-menu-bg: #1e1b35;
+  --color-link-bg: #2a2745;
+  --color-link-hover: #e85d5d;
+  --color-link-active: #c97a4a;
 
-  /* Headlines (size)*/
-  --font-h1-size: 1rem;
-  --font-h2-size: 1rem;
-  --font-h3-size: 1rem;
+  --color-card-bg: #1e1b35;
+  --color-card-bg-inverted: #16132a;
+  --color-cta-card-bg: #3d5a8a;
+  --color-cta-card-bg-inverted: #6b8fc4;
 
-  --headline2-size: 1rem;
-  --headline3-size: 1rem;
-  --font-sub1-size: 1rem;
+  --color-text: #d4c4b8; /* warm pale — body text */
+  --color-text-inverted: #d4c4b8; /* same on dark bg */
+  --color-text-muted: #8899bb; /* muted blue-grey */
+  --color-text-strong: #eee8e0; /* near white for emphasis */
 
-  /* Headlines (color) */
-  --color-headline-bg: #214993;
+  --color-info-bg: #16132a; /* section backgrounds */
+  --color-border: #2a2745;
 
-  /* Tekst */
-  --color-text: #000;
-  --color-text-inverted: #cdccc4;
+  /* ── TYPOGRAPHY ── */
+  --font-family-sans: "Rubik", ui-sans-serif, sans-serif;
+  --font-family-mono: "IBM Plex Mono", "Courier New", monospace;
 
-  /* Andet tekst */
-  --followup-text-size: 1rem;
+  --font-logotype-size: 1.1rem;
+  --font-h1-size: 2rem;
+  --font-h2-size: 1.25rem;
+  --font-h3-size: 0.75rem;
+  --font-sub1-size: 0.85rem;
+  --followup-text-size: 0.8rem;
 
-  /*  Margins */
-  --margin-head-bottom: 5px;
-
-  /* Borders */
-  --border-radius: 5px;
-
-  /* Cards */
-  --color-card-bg: #e3e1d8;
-  --color-card-bg-inverted: #4d4e4f;
-  --color-cta-card-bg: #847f7e;
-  --color-cta-card-bg-inverted: #c0bfb9;
-
-  /* Fonts & font weights*/
-  --font-family-sans: ui-sans-serif;
   --font-weight-bold: 700;
   --font-weight-medium: 500;
-  --font-weight-regular: 300;
-  --font-weight-light: 200;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
 
-  /* Infographics background colors*/
-  --color-info-bg: #000000;
+  /* ── MISC ── */
+  --border-radius: 2px;
+  --border-radius-links: 2px;
+  --margin-head-bottom: 0px;
+
+  /* ── FORM UTILITY (used in forms.css) ── */
+  --color-field-bg: #0d0b14;
+  --color-field-border: #2a2745;
+  --color-field-focus: #6b8fc4;
+}
+
+/* ── LAYOUT UTILITIES ── */
+.formcontainer--spaced {
+  margin-top: 1rem;
+}
+
+.field-error {
+  border: 2px solid var(--color-accent) !important;
+  box-shadow: 0 0 5px rgba(232, 93, 93, 0.35);
+}
+
+.option-sub {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  font-family: var(--font-family-mono);
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+.case-id {
+  font-size: 0.7rem;
+  font-family: var(--font-family-mono);
+  text-align: right;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
 }
