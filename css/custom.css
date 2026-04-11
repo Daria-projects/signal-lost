@@ -1,5 +1,5 @@
 :root {
-  /* ── PALETTE (from main SVG illustration) ── */
+  /* PALETTE  */
   --color-bg: #0d0b14; /* near-black background */
   --color-surface: #16132a; /* slightly lighter surface */
   --color-surface-mid: #1e1b35; /* fieldset background */
@@ -25,12 +25,12 @@
   --color-text: #d4c4b8; /* warm pale — body text */
   --color-text-inverted: #d4c4b8; /* same on dark bg */
   --color-text-muted: #8899bb; /* muted blue-grey */
-  --color-text-strong: #eee8e0; /* near white for emphasis */
+  --color-text-strong: #eee8e0; /* near white */
 
   --color-info-bg: #16132a; /* section backgrounds */
   --color-border: #2a2745;
 
-  /* ── TYPOGRAPHY ── */
+  /* TYPOGRAPHY  */
   --font-family-sans: "Rubik", ui-sans-serif, sans-serif;
   --font-family-mono: "IBM Plex Mono", "Courier New", monospace;
 
@@ -46,18 +46,18 @@
   --font-weight-regular: 400;
   --font-weight-light: 300;
 
-  /* ── MISC ── */
+  /* MISC */
   --border-radius: 2px;
   --border-radius-links: 2px;
   --margin-head-bottom: 0px;
 
-  /* ── FORM UTILITY (used in forms.css) ── */
+  /* FORM UTILITY (forms.css)  */
   --color-field-bg: #0d0b14;
   --color-field-border: #2a2745;
   --color-field-focus: #6b8fc4;
 }
 
-/* ── LAYOUT UTILITIES ── */
+/* LAYOUT UTILITIES */
 .formcontainer--spaced {
   margin-top: 1rem;
 }

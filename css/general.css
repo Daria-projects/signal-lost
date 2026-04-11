@@ -38,7 +38,7 @@ main section {
   border-radius: var(--border-radius);
 }
 
-/* ── HEADINGS ── */
+/* HEADINGS  */
 h1 {
   font-size: var(--font-h1-size);
   font-weight: var(--font-weight-bold);
@@ -93,7 +93,7 @@ main > h1 {
   width: 100%;
 }
 
-/* ── NAVIGATION ── */
+/*  NAVIGATION   */
 header > nav {
   height: 100%;
   background-color: var(--color-menu-bg);
@@ -159,7 +159,7 @@ nav a:active {
   background-color: var(--color-link-active);
 }
 
-/* ── FOOTER ── */
+/*  FOOTER  */
 footer {
   background-color: var(--color-head-bg);
   border-top: 1px solid var(--color-surface-mid);

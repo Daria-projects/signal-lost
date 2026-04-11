@@ -1,131 +1,92 @@
+// CLICK LISTENERS
+
 document.querySelector("#geo_pin").addEventListener("click", infoPin);
-document.querySelector("#ear_left").addEventListener("click", infoEar);
 document.querySelector("#portal").addEventListener("click", infoPortal);
+document.querySelector("#ear_left").addEventListener("click", infoEarLeft);
+document.querySelector("#ear_right").addEventListener("click", infoEarRight);
+document.querySelector("#nose").addEventListener("click", infoNose);
+document.querySelector("#eye_left_planet").addEventListener("click", infoEyeLeft);
+document.querySelector("#eye_right_star").addEventListener("click", infoEyeRight);
+
+//  HOTSPOT LIST
+
+var hotspots = ["#geo_pin", "#portal", "#ear_left", "#ear_right", "#nose", "#eye_left_planet", "#eye_right_star"];
+
+//  CLICK FUNCTIONS
 
 function infoPin() {
-  console.log("infoPin");
-  document.querySelector(".info-text > h2").textContent = "PIN";
-  document.querySelector(".info-subheadline").textContent = "Here er vigtig information om lokalisering";
-  document.querySelector("#efficiency").innerHTML = "<h3>KILDEPUNKT:</h3><p> Den røde indikator markerer lækagernes epicenter.</p> Hvis pinnen blinker synkront med din egen puls, skal du straks afbryde visuel kontakt og søge mod en 'Drømfri Zone'.";
+  resetActive();
+  document.querySelector("#geo_pin").classList.add("active");
+
+  document.querySelector(".info-text > h2").textContent = "Lokalisering";
+  document.querySelector(".info-subheadline").textContent = "Her er vigtig information om lokalisering";
+  document.querySelector("#efficiency").innerHTML = "<h3>Kildepunkt</h3><p>Den røde indikator markerer lækagernes epicenter. Hvis pinnen blinker synkront med din egen puls, skal du straks afbryde visuel kontakt og søge mod en Drømfri Zone.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Protokol</h3><p>Notér præcis GPS-koordinat. Koordinaten indgår i den officielle DL-rapport og bruges til at kortlægge spredningens retning over de næste 3 søvncyklusser.</p>";
 }
 
-function infoEar() {
-  console.log("infoEar");
-  document.querySelector(".info-text > h2").textContent = "EAR";
+function infoPortal() {
+  resetActive();
+  document.querySelector("#portal").classList.add("active");
+
+  document.querySelector(".info-text > h2").textContent = "Portal";
+  document.querySelector(".info-subheadline").textContent = "Overgangszonen mellem drøm og vågentilstand";
+  document.querySelector("#efficiency").innerHTML = "<h3>Funktion</h3><p>Portalen er det anatomiske punkt hvor drømmemateriale krydser grænsen til bevidst perception. Grad 3+ lækager passerer primært via denne kanal.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Advarsel</h3><p>Direkte stimulering af portalzonen under aktiv lækage kan resultere i permanent narrativ kohærenstab. Kontakt certificeret drømlækageteknikker.</p>";
 }
 
-function infoEar() {
-  console.log("infoPortal");
-  document.querySelector(".info-text > h2").textContent = "PORTAL";
+function infoEarLeft() {
+  resetActive();
+  document.querySelector("#ear_left").classList.add("active");
+
+  document.querySelector(".info-text > h2").textContent = "Venstre øre";
+  document.querySelector(".info-subheadline").textContent = "Primær indgangskanal for auditiv drømlækage";
+  document.querySelector("#efficiency").innerHTML = "<h3>Symptom</h3><p>Stemmer uden afsender, musik uden kilde og ekko af ord der aldrig blev sagt højt. Det venstre øre er særligt modtageligt i REM-fase 3 og 4.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Håndtering</h3><p>Undgå stille omgivelser i minimum 4 timer efter opvågning. Baggrundsstøj på 40–60 dB anbefales som narrativ forankring.</p>";
 }
-// ─── LABEL MAPS ───────────────────────────────────────────────────────────────
 
-const laekageLabels = {
-  kronologisk: "Kronologisk kollaps",
-  figurativ: "Figurativ overblødning",
-  sceneskift: "Sceneskift uden overgang",
-  ekstern: "Ekstern realitetsintrusion",
-};
+function infoEarRight() {
+  resetActive();
+  document.querySelector("#ear_right").classList.add("active");
 
-const gradLabels = {
-  0: "Grad 0 — Ingen overblødning registreret",
-  1: "Grad 1 — Sporadiske billeder ved opvågning",
-  2: "Grad 2 — Vedvarende stemning i vågentilstand",
-  3: "Grad 3 — Fragmenteret handlekraft (over 4 timer)",
-  4: "Grad 4 — Identitetstab / systemkritisk tilstand",
-};
+  document.querySelector(".info-text > h2").textContent = "Højre øre";
+  document.querySelector(".info-subheadline").textContent = "Sekundær kanal — forstærker kronologisk kollaps";
+  document.querySelector("#efficiency").innerHTML = "<h3>Symptom</h3><p>Det højre øre behandler temporale lyde — rækkefølgen af hændelser opløses. Typisk symptom: samtaler høres baglæns eller i forkert kontekst.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Håndtering</h3><p>Undgå musik med kompleks rytmisk struktur i 24 timer. Monotone toner på 432 Hz har vist stabiliserende effekt på narrativ kohærens.</p>";
+}
 
-const symptomLabels = {
-  dejavu: "Gentagne déjà vu-episoder",
-  ansigter: "Ukendte ansigter i periferien",
-  sprog: "Besvær med at formulere sig verbalt",
-  tyngde: "Fysisk tyngdefornemmelse",
-  arkitektur: "Ukendt arkitektur i kendte rum",
-  tid: "Tidsdistortion (timer føles som minutter)",
-};
+function infoNose() {
+  resetActive();
+  document.querySelector("#nose").classList.add("active");
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
+  document.querySelector(".info-text > h2").textContent = "Næse";
+  document.querySelector(".info-subheadline").textContent = "Olfaktorisk drømlækage — lugt uden kilde";
+  document.querySelector("#efficiency").innerHTML = "<h3>Symptom</h3><p>Lugte fra drømmescenarier persisterer i vågentilstand. Hyppigst rapporteret: jord efter regn, brændende materiale og ukendte blomster uden botanisk reference.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Håndtering</h3><p>Stærke neutrale dufte — f.eks. kaffegrums eller citrus — kan afbryde den olfaktoriske lækagecyklus. Anvendes i 3 × 30 sekunders intervaller.</p>";
+}
 
-document.addEventListener("DOMContentLoaded", function () {
-  const rangeInput = document.querySelector("input[type='range']");
-  const rangeValue = document.querySelector("#range-value");
-  const webform = document.querySelector("#webform");
+function infoEyeLeft() {
+  resetActive();
+  document.querySelector("#eye_left_planet").classList.add("active");
 
-  // Range
-  rangeInput.addEventListener("input", function () {
-    rangeValue.textContent = rangeInput.value;
-    if (rangeInput.value <= 24) {
-      rangeInput.style.accentColor = "#6b8fc4";
-    } else if (rangeInput.value <= 48) {
-      rangeInput.style.accentColor = "#c97a4a";
-    } else {
-      rangeInput.style.accentColor = "#e85d5d";
-    }
+  document.querySelector(".info-text > h2").textContent = "Venstre øje";
+  document.querySelector(".info-subheadline").textContent = "Planetarisk perception — rumlig distortion";
+  document.querySelector("#efficiency").innerHTML = "<h3>Symptom</h3><p>Det venstre øje registrerer rumlig lækage: kendte rum fremstår ukendte, afstande er fordrejede og arkitektur følger drømmens geometri frem for virkelighedens.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Håndtering</h3><p>Fokusér på et fast punkt i 90 sekunder. Hjernens spatiale kortlægning recalibreres via vedvarende visuel forankring til et stabilt objekt i det fysiske rum.</p>";
+}
+
+function infoEyeRight() {
+  resetActive();
+  document.querySelector("#eye_right_star").classList.add("active");
+
+  document.querySelector(".info-text > h2").textContent = "Højre øje";
+  document.querySelector(".info-subheadline").textContent = "Stjerneperseption — figurativ overblødning";
+  document.querySelector("#efficiency").innerHTML = "<h3>Symptom</h3><p>Det højre øje er ansvarligt for ansigtsgenkendelse. Ved lækage optræder kendte ansigter med forkert adfærd eller fremmede ansigter i periferien af synsfeltet.</p>";
+  document.querySelector("#requirement").innerHTML = "<h3>Håndtering</h3><p>Undgå menneskemængder i 2–4 timer efter opvågning. Figurativ overblødning intensiveres ved høj social stimulering i den tidlige vågenfase.</p>";
+}
+
+// RESET
+function resetActive() {
+  hotspots.forEach(function (selector) {
+    document.querySelector(selector).classList.remove("active");
   });
-
-  // Invalid — suppress browser tooltip, add error class
-  document.querySelectorAll("input, select, textarea").forEach(function (el) {
-    el.addEventListener("invalid", function (e) {
-      e.preventDefault();
-      el.classList.add("field-error");
-    });
-    el.addEventListener("input", function () {
-      el.classList.remove("field-error");
-    });
-    el.addEventListener("change", function () {
-      el.classList.remove("field-error");
-    });
-  });
-
-  // Submit
-  webform.addEventListener("submit", function (e) {
-    e.preventDefault();
-    handleSubmit(webform);
-  });
-});
-
-// ─── SUBMIT → SUMMARY ────────────────────────────────────────────────────────
-
-function handleSubmit(webform) {
-  const data = new FormData(webform);
-
-  const navn = data.get("navn") || "–";
-  const juridisk = data.get("juridisk") || "–";
-  const email = data.get("email") || "–";
-  const tlf = data.get("tlf") || "–";
-  const type = laekageLabels[data.get("laekagetype")] || "–";
-  const grad = gradLabels[data.get("grad")] || "–";
-  const varighed = data.get("varighed") || "0";
-  const beskriv = data.get("beskriv") || "–";
-
-  const symptoms = data.getAll("symptom");
-  const symptomList = symptoms.length
-    ? symptoms
-        .map(function (s) {
-          return `<li>${symptomLabels[s] || s}</li>`;
-        })
-        .join("")
-    : "<li>Ingen angivet</li>";
-
-  document.querySelector("#form-summary article").innerHTML = `
-    <h3>Patient</h3>
-    <p>${navn} / ${juridisk}<br>${email}<br>${tlf}</p>
-
-    <h3>Primær lækagetype</h3>
-    <p>${type}</p>
-
-    <h3>Kontaminationsgrad</h3>
-    <p>${grad}</p>
-
-    <h3>Varighed</h3>
-    <p>${varighed} timer</p>
-
-    <h3>Symptomer</h3>
-    <ul>${symptomList}</ul>
-
-    <h3>Beskrivelse</h3>
-    <p>${beskriv}</p>
-  `;
-
-  document.querySelector("#form-summary").scrollIntoView({ behavior: "smooth" });
 }
