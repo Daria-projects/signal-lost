@@ -91,7 +91,7 @@ legend {
   margin-top: 1rem;
 }
 
-/* ── LABELS ───────────────────────────────────────────────────────── */
+/*  LABELS  */
 
 label.blok,
 label[for] {
@@ -120,7 +120,7 @@ form p {
   margin-bottom: 0.5rem;
 }
 
-/* ── INPUTS ───────────────────────────────────────────────────────── */
+/* INPUTS  */
 
 input[type="text"],
 input[type="email"],
@@ -157,7 +157,7 @@ textarea {
   line-height: 1.6;
 }
 
-/* ── SELECT ───────────────────────────────────────────────────────── */
+/*  SELECT */
 
 select {
   cursor: pointer;
@@ -167,7 +167,7 @@ select {
   background-position: right 0.75rem center;
 }
 
-/* ── RADIO & CHECKBOX ─────────────────────────────────────────────── */
+/*  RADIO & CHECKBOX  */
 
 fieldset > .form-group > div {
   display: flex;
@@ -210,7 +210,7 @@ fieldset > .form-group > div > label {
   margin-top: 0.1rem;
 }
 
-/* ── RANGE ────────────────────────────────────────────────────────── */
+/*  RANGE  */
 
 input[type="range"] {
   width: 100%;
@@ -231,7 +231,7 @@ input[type="range"] {
   letter-spacing: 0.04em;
 }
 
-/* ── FIELD INFO ───────────────────────────────────────────────────── */
+/*  FIELD INFO  */
 
 .field-info {
   font-family: var(--font-family-mono);
@@ -245,14 +245,14 @@ input[type="range"] {
   color: var(--color-accent);
 }
 
-/* ── VALIDATION ───────────────────────────────────────────────────── */
+/*  VALIDATION */
 
 .field-error {
   border-color: var(--color-accent) !important;
   box-shadow: 0 0 0 2px rgba(232, 93, 93, 0.2);
 }
 
-/* ── SUBMIT ───────────────────────────────────────────────────────── */
+/* SUBMIT  */
 
 .submit-disclaimer {
   margin-bottom: 1rem;
@@ -279,7 +279,7 @@ button#submit-button:hover {
   background-color: var(--color-accent);
 }
 
-/* ── SUMMARY ──────────────────────────────────────────────────────── */
+/*  SUMMARY  */
 
 #form-summary h2 {
   font-size: var(--font-h2-size);
