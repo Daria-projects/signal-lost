@@ -9,11 +9,12 @@
 }
 
 .info-graphic {
+  position: relative;
   border-radius: 0;
-  margin: 60px auto 80px auto;
+  margin: 0;
 }
 
-/*  INFO TEXT PANEL */
+/* INFO TEXT PANEL */
 
 .info-text h2 {
   font-family: var(--font-family-mono);
@@ -50,7 +51,7 @@
   padding: 0;
 }
 
-/*  INFO BOXES  */
+/* INFO BOXES */
 
 .info-box {
   padding: 1.25rem 1rem 0.75rem 1rem;
@@ -65,7 +66,7 @@
   border-left-color: var(--color-accent);
 }
 
-/* SVG HOTSPOT INTERACTION  */
+/* SVG HOTSPOT INTERACTION */
 
 #geo_pin,
 #portal,
@@ -119,4 +120,47 @@
 
 #portal.active {
   animation: portal-pulse 2.2s ease-in-out infinite;
+}
+
+/* BACKGROUND TEXT */
+
+.bg-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-text span {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-family-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-logotype);
+  opacity: 0.06;
+  user-select: none;
+}
+
+.bg-text span:nth-child(even) {
+  opacity: 0.03;
+}
+
+/* SVG */
+
+.info-graphic svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  display: block;
 }
