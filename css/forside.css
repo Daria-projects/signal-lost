@@ -1,8 +1,9 @@
 #top-section-wrapper {
-    background-color: var(--color-head-bg): fixed;
-    p {
-        color: var(--color-text-invertet)
-    }
+  background-color: var(--color-head-bg);
+
+  p {
+    color: var(--color-text-invertet);
+  }
 }
 #top-section {
   display: grid;
@@ -12,11 +13,11 @@
   margin: 2rem auto;
 }
 #frontpage-article {
-display: grid;
-grid-template-columns: 1fr 3fr;
-background-color: var(--color-info-bg);
-border-radius: var(--border-radius);
-padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: var(--color-info-bg);
+  border-radius: var(--border-radius);
+  padding: 1rem;
 }
 
 /* Q & A */
@@ -43,14 +44,17 @@ summary::marker {
 }
 
 summary {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 summary::after {
-  content: "+"
-  font-family: system ui;
+  content: "+";
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif; /* Added hyphen and fallbacks */
   font-weight: 400;
   font-size: 1.1rem;
 }
@@ -65,9 +69,8 @@ html {
 
 ::details-content {
   height: 0;
-  transition: .3s allow-discrete;
+  transition: 0.3s allow-discrete;
   overflow: clip;
-  
 }
 
 [open]::details-content {
