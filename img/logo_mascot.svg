@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.5 75.65">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 1.8px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #e85d5d;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-5 {
+        stroke-width: 1.5px;
+      }
+
+      .cls-5 {
+        fill: #16132a;
+      }
+
+      .cls-5, .cls-3, .cls-4 {
+        stroke: #eee8e0;
+      }
+
+      .cls-6 {
+        fill: #eee8e0;
+      }
+
+      .cls-3 {
+        stroke-width: 1.2px;
+      }
+
+      .cls-7 {
+        fill: #e85d5d;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <ellipse class="cls-5" cx="28.75" cy="40.9" rx="28" ry="34"/>
+      <circle class="cls-1" cx="28.75" cy="10.9" r="10"/>
+      <circle class="cls-7" cx="28.75" cy="10.9" r="3.5"/>
+      <line class="cls-2" x1="28.75" y1="20.9" x2="28.75" y2="10.73"/>
+      <circle class="cls-3" cx="19.75" cy="36.9" r="3.5"/>
+      <circle class="cls-6" cx="36.75" cy="36.9" r="3.5"/>
+      <rect class="cls-4" x="18.75" y="50.9" width="20" height="5" rx=".27" ry=".27"/>
+    </g>
+  </g>
+</svg>
