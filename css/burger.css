@@ -23,7 +23,6 @@
     flex: 0 0 50vw;
   }
   .burger {
-    /* display: block; */
     background-color: transparent;
     border: 0;
     flex: 0 0 auto;
