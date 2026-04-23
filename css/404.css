@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap");
 
-/* ── TOKENS ─────────────────────────────────────── */
+/*  TOKENS  */
 :root {
   --color-bg: #0d0b14;
   --color-surface: #16132a;
@@ -18,7 +18,7 @@
   --font-sans: "Outfit", sans-serif;
 }
 
-/* ── RESET ──────────────────────────────────────── */
+/*  RESET  */
 *,
 *::before,
 *::after {
@@ -36,7 +36,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── SCANLINE TEXTURE ───────────────────────────── */
+/*  SCANLINE TEXTURE ─ */
 body::before {
   content: "";
   position: fixed;
@@ -46,7 +46,7 @@ body::before {
   z-index: 0;
 }
 
-/* ── HEADER ─────────────────────────────────────── */
+/*  HEADER  */
 .page-header {
   position: fixed;
   top: 0;
@@ -107,7 +107,7 @@ body::before {
   }
 }
 
-/* ── PAGE LAYOUT ────────────────────────────────── */
+/* PAGE LAYOUT  */
 .page-404 {
   display: flex;
   flex-direction: column;
@@ -118,7 +118,7 @@ body::before {
   z-index: 1;
 }
 
-/* ── HERO ───────────────────────────────────────── */
+/*  HERO  */
 .hero {
   width: 100%;
   max-width: 900px;
@@ -131,7 +131,7 @@ body::before {
   z-index: 2;
 }
 
-/* ── ERROR CODE ─────────────────────────────────── */
+/*  ERROR CODE  */
 .error-code {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -153,7 +153,7 @@ body::before {
   background: var(--color-accent);
 }
 
-/* ── HEADLINE ───────────────────────────────────── */
+/*  HEADLINE */
 .headline-wrap {
   position: relative;
   display: inline-block;
@@ -211,7 +211,7 @@ body::before {
   vertical-align: super;
 }
 
-/* ── SVG STAGE ──────────────────────────────────── */
+/*  SVG STAGE  */
 .svg-stage {
   position: relative;
   width: 100%;
@@ -270,7 +270,7 @@ body::before {
   }
 }
 
-/* ── CONTENT BAND ───────────────────────────────── */
+/*  CONTENT BAND  */
 .content-band {
   position: relative;
   z-index: 2;
@@ -288,7 +288,7 @@ body::before {
   padding-left: 3rem;
 }
 
-/* ── COPY ───────────────────────────────────────── */
+/*  COPY  */
 .subline {
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -314,7 +314,7 @@ body::before {
   font-weight: 400;
 }
 
-/* ── BUTTONS ────────────────────────────────────── */
+/*  BUTTONS  */
 .cta-group {
   display: flex;
   gap: 0.75rem;
@@ -360,7 +360,7 @@ body::before {
   color: var(--color-text-strong);
 }
 
-/* ── READOUT ────────────────────────────────────── */
+/*  READOUT  */
 .readout {
   padding: 1rem 1.25rem;
   border: 1px solid var(--color-border);
@@ -390,7 +390,7 @@ body::before {
   color: var(--color-text-strong);
 }
 
-/* ── BLINK ──────────────────────────────────────── */
+/*  BLINK  */
 .blink {
   animation: blink 1.8s step-start infinite;
 }
@@ -404,7 +404,7 @@ body::before {
   }
 }
 
-/* ── FOOTER STRIP ───────────────────────────────── */
+/*  FOOTER STRIP  */
 .page-footer-strip {
   width: 100%;
   border-top: 1px solid var(--color-border);
@@ -420,7 +420,7 @@ body::before {
   background-color: var(--color-surface);
 }
 
-/* ── MOBILE ─────────────────────────────────────── */
+/*  MOBILE  */
 @media (max-width: 700px) {
   .hero {
     padding-top: 2.5rem;

@@ -28,6 +28,9 @@
   --color-text-muted: #8899bb; /* muted blue-grey */
   --color-text-strong: #eee8e0; /* near white */
 
+  --color-surface-high: #252240; /* lightest surface step — hover states, elevated panels */
+  --color-border-faint: #1a1830; /* very subtle divider, barely-there borders */
+
   --color-info-bg: #16132a; /* section backgrounds */
   --color-border: #2a2745;
 
