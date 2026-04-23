@@ -1,6 +1,4 @@
-/*
- *  SOMNUS INTERFACE LOGIC
- */
+/* SOMNUS INTERFACE LOGIC */
 (function () {
   //  1. SWING — tilt [data-swing] elements toward mouse
   (function initSwing() {
