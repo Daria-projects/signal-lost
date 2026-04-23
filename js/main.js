@@ -1,12 +1,23 @@
-// CLICK LISTENERS
+// CLICK LISTENERS - Wait for page to load
+document.addEventListener("DOMContentLoaded", function() {
+  // Buttons
+  document.querySelector("#btn_geo_pin").addEventListener("click", infoPin);
+  document.querySelector("#btn_portal").addEventListener("click", infoPortal);
+  document.querySelector("#btn_ear_left").addEventListener("click", infoEarLeft);
+  document.querySelector("#btn_ear_right").addEventListener("click", infoEarRight);
+  document.querySelector("#btn_nose").addEventListener("click", infoNose);
+  document.querySelector("#btn_eye_left").addEventListener("click", infoEyeLeft);
+  document.querySelector("#btn_eye_right").addEventListener("click", infoEyeRight);
 
-document.querySelector("#geo_pin").addEventListener("click", infoPin);
-document.querySelector("#portal").addEventListener("click", infoPortal);
-document.querySelector("#ear_left").addEventListener("click", infoEarLeft);
-document.querySelector("#ear_right").addEventListener("click", infoEarRight);
-document.querySelector("#nose").addEventListener("click", infoNose);
-document.querySelector("#eye_left_planet").addEventListener("click", infoEyeLeft);
-document.querySelector("#eye_right_star").addEventListener("click", infoEyeRight);
+  // SVG elements (also clickable)
+  document.querySelector("#geo_pin").addEventListener("click", infoPin);
+  document.querySelector("#portal").addEventListener("click", infoPortal);
+  document.querySelector("#ear_left").addEventListener("click", infoEarLeft);
+  document.querySelector("#ear_right").addEventListener("click", infoEarRight);
+  document.querySelector("#nose").addEventListener("click", infoNose);
+  document.querySelector("#eye_left_planet").addEventListener("click", infoEyeLeft);
+  document.querySelector("#eye_right_star").addEventListener("click", infoEyeRight);
+});
 
 //  HOTSPOT LIST
 

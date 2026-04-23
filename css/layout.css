@@ -1,72 +1,95 @@
-/* LAYOUT FOR MAIN CONTENT */
+/*  BODY GRID (header / main / footer rows)  */
 body {
   display: grid;
+  grid-template-columns: 100%; /* single column — prevents children from overflowing viewport */
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  margin: 0 auto;
+  margin: 0;
+  width: 100%;
 }
+
+/* Full-bleed body-level elements (ticker, hero, illustration live outside <main>) */
+#status-ticker,
+#main-disclaimer,
+#mobile-illustration {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN */
 main {
   display: grid;
   row-gap: 1rem;
+  grid-template-rows: min-content min-content 1fr min-content;
 }
+
 main > *:not(:first-child) {
   margin: 0 1rem;
 }
-main {
-  grid-template-rows: min-content min-content 1fr min-content;
-}
-#instruction main {
-  grid-template-rows: min-content min-content min-content 1fr min-content;
-}
-/* LAYOUT FOR HEADER AND FOOTER */
-footer {
-  display: grid;
-  grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
-}
+
+/*  HEADER / FOOTER FULL-WIDTH  */
 
 header {
   grid-row: 1;
-  display: grid;
-  grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
-}
-header nav,
-footer nav {
-  grid-column: 2 / 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header nav > * {
-  flex: 1;
-}
-nav ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-header ul {
-  height: 100%;
-  width: clamp(175px, 50%, 300px);
-}
-footer ul {
-  flex-direction: column;
-  padding-left: 1rem;
+  width: 100%;
 }
 
-/* LAYOUT FOR SECTIONS */
+footer {
+  width: 100%;
+}
 
+/*  INSTRUCTION PAGE — 2-COLUMN (SVG LEFT / INFO RIGHT)  */
 @media (width > 600px) {
-  #instruction > main,
+  #instruction > main {
+    grid-template-columns: 3fr 2fr;
+    column-gap: 1.5rem;
+    grid-template-rows: auto auto auto;
+    align-items: start;
+  }
+
+  /* h1 + subheading span full width across the top */
+  #instruction > main > h1,
+  #instruction > main > .sub {
+    grid-column: 1 / -1;
+  }
+
+  /* SVG mascot pinned to the LEFT column */
+  #instruction > main > .info-graphic {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* Info text panel pinned to the RIGHT column, sticky so it follows as you scroll */
+  #instruction > main > .info-text {
+    grid-column: 2;
+    grid-row: 3;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+  }
+}
+
+/*  REGISTER PAGE retains its own 5fr/3fr layout ─ */
+@media (width > 600px) {
   #register > main {
     grid-template-columns: 5fr 3fr;
     grid-template-rows: auto auto 1fr auto;
   }
 
-  .qr {
+  #register .qr {
     order: 1;
   }
 
-  h1 {
+  #register > main > h1 {
+    grid-column: 1 / -1;
+  }
+}
+
+/*  MOBILE FALLBACK — single column stack  */
+@media (max-width: 600px) {
+  #instruction > main > .info-graphic,
+  #instruction > main > .info-text {
     grid-column: 1 / -1;
   }
 }

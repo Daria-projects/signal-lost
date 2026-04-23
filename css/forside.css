@@ -2,7 +2,7 @@
   background-color: var(--color-head-bg);
 
   p {
-    color: var(--color-text-invertet);
+    color: var(--color-text-inverted);
   }
 }
 #top-section {
@@ -10,7 +10,7 @@
   grid-template-columns: 1fr 5fr;
   align-content: center;
   gap: 1rem;
-  margin: 2rem auto;
+  margin: 2rem 1rem;
 }
 #frontpage-article {
   display: grid;
@@ -20,47 +20,192 @@
   padding: 1rem;
 }
 
-/* Q & A */
-details {
-  outline: 2px solid #000;
+/*  FAQ SECTION  */
+.faq-section {
+  margin: 6rem 1rem;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-summary {
-  background: #eee;
+.faq-grid-container {
+  display: block;
+  width: 100%;
+}
+
+.faq-content-wrapper {
+  width: 100%;
+}
+
+/* Sidebar is hidden in-flow — mascot is now a fixed overlay */
+.faq-sidebar {
+  display: none;
+}
+.faq-section > h2 {
+  font-family: var(--font-family-sans);
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.faq-section .section-label {
+  margin-bottom: 2rem;
+}
+
+/* Accordion item */
+.faq-section details {
+  background-color: var(--color-surface-mid);
+  border: 1px solid var(--color-border);
+  outline: none;
+  width: 100%;
+  max-width: none;
+  margin: 0 0 0.75rem;
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.faq-section details:hover {
+  border-color: var(--color-accent-muted);
+}
+
+.faq-section details[open] {
+  border-color: var(--color-accent);
+}
+/*  FAQ MASCOT — FIXED OVERLAY 
+   Appears when user scrolls into .faq-section,
+   tilts with mouse, hides on click or scroll away.
+   */
+#faq-mascot-overlay {
+  position: fixed;
+  bottom: -320px; /* hidden below viewport */
+  right: 3rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  transition: bottom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: bottom;
+}
+
+#faq-mascot-overlay.visible {
+  bottom: 0;
+  pointer-events: auto;
+}
+
+#faq-mascot-overlay .mascot-status-tag {
+  font-family: var(--font-family-mono);
+  font-size: 0.58rem;
+  color: var(--color-accent);
+  background: rgba(232, 93, 93, 0.12);
+  padding: 3px 8px;
+  border: 1px solid var(--color-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#faq-mascot-overlay .mascot-data-readout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font-family: var(--font-family-mono);
+  font-size: 0.58rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+}
+
+#faq-mascot-overlay img {
+  width: 400px;
+  height: auto;
+  display: block;
   cursor: pointer;
-  padding: 1rem;
+  filter: drop-shadow(0 -10px 40px rgba(100, 140, 200, 0.25));
+  transform: rotate(var(--swing-deg, 0deg));
+  transition: transform 0.12s ease-out;
 }
 
-.content {
-  padding: 1rem;
+/* MOBILE FIX */
+@media (max-width: 1100px) {
+  .faq-section {
+    margin: 6rem 1rem;
+    padding: 0;
+  }
+  #faq-mascot-overlay {
+    right: 1rem;
+  }
+  #faq-mascot-overlay img {
+    width: 160px;
+  }
 }
 
-.content p {
-  margin: 0;
-}
-
-summary::marker {
-  content: none;
-}
-
-summary {
+/* Summary (the clickable header of each item) */
+.faq-section summary {
+  background: transparent;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-family-sans);
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-strong);
+  list-style: none;
+  transition: background-color 0.15s;
 }
 
-summary::after {
+.faq-section summary:hover {
+  background-color: rgba(232, 93, 93, 0.06);
+}
+
+.faq-section details[open] summary {
+  background-color: rgba(61, 90, 138, 0.15);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-section summary::marker,
+.faq-section summary::-webkit-details-marker {
+  display: none;
+  content: "";
+}
+
+.faq-section summary::after {
   content: "+";
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif; /* Added hyphen and fallbacks */
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-mono);
   font-weight: 400;
   font-size: 1.1rem;
+  line-height: 1;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  transition: transform 0.25s ease;
 }
 
-[open] summary::after {
-  content: "-";
+.faq-section details[open] summary::after {
+  content: "–";
+  transform: rotate(180deg);
+}
+
+/* Content panel */
+.faq-section .content {
+  padding: 1.25rem;
+  background-color: var(--color-bg);
+}
+
+.faq-section .content p {
+  max-width: none !important;
+  width: 100%;
 }
 
 html {
@@ -75,4 +220,62 @@ html {
 
 [open]::details-content {
   height: auto;
+}
+
+[data-swing] {
+  cursor: pointer !important;
+  transform: rotate(var(--swing-deg, 0deg));
+  transition: transform 0.1s ease-out;
+}
+
+/*  STAT ROW  */
+#stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+  margin: 0 1rem;
+}
+
+.stat-cell {
+  background-color: var(--color-surface);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stat-cell .stat-num {
+  font-family: var(--font-family-mono);
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-cell .stat-label {
+  font-family: var(--font-family-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.stat-cell .stat-sub {
+  font-size: 0.68rem;
+  color: var(--color-accent);
+  font-family: var(--font-family-mono);
+  letter-spacing: 0.06em;
+}
+
+#frontpage main > section {
+  padding: 0;
+  border-radius: 0;
+}
+
+#frontpage main > .section-label {
+  padding: 0 1rem;
+  margin: 1.25rem 1rem 0.75rem;
 }

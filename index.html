@@ -10,17 +10,32 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
     <link rel="stylesheet" href="css/cards.css" />
-    <link rel="icon" type="image/png" href="img/fav.png" />
     <link rel="stylesheet" href="css/forside.css" />
+    <link rel="stylesheet" href="css/mono.css" />
+    <link rel="icon" type="image/png" href="img/fav.png" />
     <title>SOMNUS — Drømlækage Nødberedskab</title>
-
   </head>
 
   <body id="frontpage">
     <header>
       <nav>
         <div id="logotype-wrapper" class="logo">
-          <a href="index.html"> SOMNUS </a>
+          <a href="index.html">
+            <!-- LOGO SOMNUS SVG -->
+            <svg class="logo-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.83 41.82" aria-hidden="true">
+              <path
+                d="M15.92,41.82C7.14,41.82,0,33.19,0,22.58S7.14,3.33,15.92,3.33s15.92,8.63,15.92,19.25-7.14,19.24-15.92,19.24ZM15.92,4.08C7.55,4.08.75,12.38.75,22.58s6.8,18.49,15.17,18.49,15.17-8.3,15.17-18.49S24.28,4.08,15.92,4.08Z"
+                fill="#9dbef3"
+              />
+              <circle cx="15.92" cy="5.93" r="5.55" fill="none" stroke="#e85d5d" stroke-miterlimit="10" stroke-width=".75" />
+              <circle cx="15.92" cy="5.93" r="1.94" fill="#e85d5d" />
+              <line x1="15.92" y1="11.48" x2="15.92" y2="5.83" fill="none" stroke="#e85d5d" stroke-miterlimit="10" stroke-width=".75" />
+              <circle cx="10.92" cy="20.36" r="1.94" fill="none" stroke="#9dbef3" stroke-miterlimit="10" stroke-width=".75" />
+              <circle cx="20.36" cy="20.36" r="1.94" fill="#9dbef3" />
+              <rect x="10.37" y="28.13" width="11.1" height="2.78" rx=".15" ry=".15" fill="none" stroke="#9dbef3" stroke-miterlimit="10" stroke-width=".75" />
+            </svg>
+            SOMNUS
+          </a>
         </div>
         <ul class="menu">
           <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
@@ -33,133 +48,443 @@
         </button>
       </nav>
     </header>
-    <!-- header section med logo -->
-     <div id="top-section-wrapper">
-    <section id="top-section">
-      
-      <img src="img/logo_mascot.svg" alt="" srcset="" />
-      
-      <div>
-       <h1>Hej</h1>
-       <p> Her er blah blah blah....</p>
-       </div>
-</section>
+
+    <!-- STATUS TICKER -->
+    <div id="status-ticker" aria-hidden="true">
+      <div class="ticker-inner">
+        <span>Aktuel lækagegrad: FORHØJET</span>
+        <span class="muted">Seneste hændelse: 14 min siden</span>
+        <span>Drøm-REM-frekvens: 4–8 Hz</span>
+        <span class="muted">Koordinat: 55.6761° N / 12.5683° Ø</span>
+        <span>Protokol v2.4 — AKTIV</span>
+        <span class="muted">Behandlingstid: 3–5 søvncyklusser</span>
+        <span>Nye sager i dag: 47</span>
+        <span class="muted">Somnus nødberedskab — Stand by</span>
+        <span>Aktuel lækagegrad: FORHØJET</span>
+        <span class="muted">Seneste hændelse: 14 min siden</span>
+        <span>Drøm-REM-frekvens: 4–8 Hz</span>
+        <span class="muted">Koordinat: 55.6761° N / 12.5683° Ø</span>
+        <span>Protokol v2.4 — AKTIV</span>
+        <span class="muted">Behandlingstid: 3–5 søvncyklusser</span>
+        <span>Nye sager i dag: 47</span>
+        <span class="muted">Somnus nødberedskab — Stand by</span>
       </div>
-<!-- section med artikler -->
- <article>
-  <div>
-    <img src="img/logo_maybe.svg" alt="">
-
-  </div>
- </article>
-     
-    
-     </div>
-
- <section class="faq-section">
-  <h2>FAQ</h2>
-  <p class="section-label">
-    Hyppigt stillede spørgsmål
-    <span>Protokol v2.4 — godkendt dokumentation</span>
-  </p>
-
-  <details name="accordion">
-    <summary>Hvad er en drømlækage egentlig?</summary>
-    <div class="content">
-      <p>En drømlækage opstår, når det perceptuelle membran mellem REM-tilstand og vågentilstand svækkes tilstrækkeligt til, at drømmemateriale trænger igennem uden kontrolleret overgang. Det er ikke en metafor. Materialet er målbart, kategoriserbart og — i de fleste tilfælde — behandleligt. Årsagerne er fortsat under kortlægning, men systemet registrerer konsekvent forhøjet aktivitet i perioden 03:00–04:30 lokal tid.</p>
     </div>
-  </details>
 
-  <details name="accordion">
-    <summary>Er det farligt?</summary>
-    <div class="content">
-      <p>Det afhænger af lækagegraden. Grad 1–2 er ubehagelighed med håndterbar varighed. Grad 3 indebærer kronologisk kollaps og spatial desorientering, som typisk løser sig inden for én søvncyklus ved korrekt protokolfølgning. Grad 4 er en aktiv portalhændelse og kræver omgående aktivering af Protokol v2.4, trin 4–7. Systemet har ikke dokumenterede fatale udfald. Systemet har heller ikke dokumenteret det modsatte.</p>
+    <!-- ALERT BANNER -->
+    <section id="main-disclaimer">
+      <div id="main-disclaimer-content">
+        <div>
+          <div id="alert-level">Nødberedskab aktiveret — Grad 2</div>
+          <h1>Drømlækage<br />detekteret.<em>*</em></h1>
+          <p class="sub">Dit narrative system er kompromitteret. Drømmemateriale trænger ind i vågentilstanden med stigende frekvens. Vi har protokollerne. Du har stadig tid.</p>
+          <div id="main-disclaimer-cta">
+            <a href="instruction.html" class="btn-primary">Konsultér feltguiden →</a>
+            <a href="register.html" class="btn-secondary">Indgiv rapport</a>
+          </div>
+        </div>
+
+        <div class="bg-watermark" aria-hidden="true">SOMNUS</div>
+      </div>
+    </section>
+
+    <!-- MOBILE ILLUSTRATION -->
+    <div id="mobile-illustration">
+      <p class="illu-label">Drømlækage — visualiseret</p>
+      <div data-swing aria-hidden="true">
+        <img src="img/mobile.svg" alt="Illustration af en mobile hvorfra drømmemateriale lækker ud" width="680" height="510" loading="lazy" decoding="async" />
+      </div>
+      <p class="illu-caption">
+        Dit narrative system er kompromitteret.<br />
+        <em>Drømmemateriale detekteret</em> — Grad 2 lækage i gang.
+      </p>
     </div>
-  </details>
 
-  <details name="accordion">
-    <summary>Hvordan ved jeg, om jeg er ramt?</summary>
-    <div class="content">
-      <p>Primære indikatorer inkluderer: genkendelse af fremmede ansigter som bekendte, erindringer om begivenheder der ikke har fundet sted, lyde hørt i omvendt rækkefølge, manglende evne til at rekonstruere hændelsesrækkefølge fra de seneste 24 timer, og en vedvarende fornemmelse af at befinde sig parallelt med sig selv. Sekundære indikatorer: du læser dette.</p>
-    </div>
-  </details>
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- STAT ROW -->
+      <div id="stat-row">
+        <div class="stat-cell">
+          <span class="stat-num">2.847</span>
+          <span class="stat-label">Registrerede lækager<br />denne måned</span>
+          <span class="stat-sub">↑ 12% fra forrige cyklus</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">94%</span>
+          <span class="stat-label">Cases løst inden for<br />5 søvncyklusser</span>
+          <span class="stat-sub">Protokol-overensstemmelse</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">03:47</span>
+          <span class="stat-label">Gennemsnitlig lækage-<br />start (lokal tid)</span>
+          <span class="stat-sub">Peak: REM-fase 3–4</span>
+        </div>
+      </div>
 
-  <details name="accordion">
-    <summary>Hvad sker der, når jeg indsender en rapport?</summary>
-    <div class="content">
-      <p>Din rapport anonymiseres og indgår i det kollektive drømmekatalog, som danner grundlag for systemets løbende kortlægning af lækageaktivitet. Du modtager et sagsnummer inden for én søvncyklus. Behandlingstid er typisk 3–5 søvncyklusser, afhængigt af lækagekompleksitet. Data deles ikke på tværs af søvnstadier uden samtykke. Hvad samtykke betyder i denne kontekst, afklares i Bilag C, som ikke er offentligt tilgængeligt.</p>
-    </div>
-  </details>
+      <!-- FEATURE CARDS -->
+      <p class="section-label">
+        Nødberedskabsmoduler
+        <span>02 aktive protokoller</span>
+      </p>
 
-  <details name="accordion">
-    <summary>Hvad er Protokol v2.4, og hvad erstattede den?</summary>
-    <div class="content">
-      <p>Protokol v2.3 var utilstrækkelig ved Grad 3-hændelser og viste sig fuldstændig ubrugelig ved aktive portalåbninger. Den manglede geo-pin-systemet, REM-faseankeringen og den korrekte rækkefølge for 432 Hz-toneinduktion. v2.4 blev implementeret efter hændelserne i uge 34, hvis detaljerede forløb ikke er til offentlig diskussion. Systemet anbefaler kraftigt, at alle brugere sætter sig ind i v2.4 inden søvn.</p>
-    </div>
-  </details>
+      <section id="daily">
+        <article class="daily_card">
+          <div class="daily_card-img">
+            <img src="img/Protocol_card_01.svg" alt="Illustration af Protokol 01" class="protocol-illustration" loading="lazy" />
+            <div class="card-tag">Protokol 01 — Feltguide</div>
+          </div>
+          <div class="daily_text">
+            <h2>Nærkontakt-protokollen</h2>
+            <p>Lær at identificere lækagepunkterne i dit eget perceptuelle system. Interaktiv kortlægning af de 7 primære indgangskanaler.</p>
+            <a href="instruction.html" class="cta_btn">Åbn feltguiden</a>
+          </div>
+        </article>
 
-  <details name="accordion">
-    <summary>Virker 432 Hz-tonen virkelig?</summary>
-    <div class="content">
-      <p>I kontrollerede forsøg med Grad 1–2-lækager: effektiv i 94% af tilfældene. Tonen fungerer ved at etablere en akustisk ankerstruktur i det perceptuelle membran, som hæmmer videre materialetransport. Ved Grad 3 er effekten reduceret og afhænger af tidspunktet for tonetilførslen relativt til lækageinitiering. Ved Grad 4-hændelser har tonen ingen dokumenteret effekt. Systemet anbefaler den alligevel. Det koster ingenting at prøve.</p>
-    </div>
-  </details>
+        <article class="daily_card">
+          <div class="daily_card-img">
+            <img src="img/Protocol_card_02.svg" alt="Illustration af Protokol 02" class="protocol-illustration" loading="lazy" />
+            <div class="card-tag">Protokol 02 — Rapport</div>
+          </div>
+          <div class="daily_text">
+            <h2>Indgiv din lækagerapport</h2>
+            <p>Officiel registrering af din drømlækagehændelse. Alle data indgår i det kollektive drømmekatalog. Behandlingstid: 3–5 søvncyklusser.</p>
+            <a href="register.html" class="cta_btn">Start rapport</a>
+          </div>
+        </article>
+      </section>
 
-  <details name="accordion">
-    <summary>Kan jeg bruge feltguiden offline?</summary>
-    <div class="content">
-      <p>Ja. Feltguiden er konstrueret til at fungere uden netværksforbindelse, da lækageepisoder hyppigst rammer i perioder med reduceret systemtilgængelighed. Peak-lækagetime (03:47) falder konsekvent sammen med reduceret mobilsignal i visse byområder. Dette er noteret. Årsagen er ikke afklaret. Feltguiden kan tilgås fuldt ud offline efter første indlæsning.</p>
-    </div>
-  </details>
+      <!-- NEWS / BREAKING -->
+      <div id="breaking-zone">
+        <p class="section-label" style="margin-top: 1.5rem">
+          Seneste hændelser
+          <span>Live — opdateres pr. søvncyklus</span>
+        </p>
 
-  <details name="accordion">
-    <summary>Hvad er et perceptuelt node-punkt?</summary>
-    <div class="content">
-      <p>Et perceptuelt node-punkt er en af de syv primære indgangskanaler, hvorfra drømmemateriale typisk initierer sin overgang til vågentilstanden. De syv node-punkter er kortlagt i feltguiden med tilhørende interventionsmetoder. Node-punkt 02 (orbitalt) er det hyppigst aktiverede ved Grad 2–3-hændelser. Node-punkt 07 er ikke beskrevet i den offentlige version af feltguiden.</p>
-    </div>
-  </details>
+        <section id="breaking">
+          <!-- NEWS CARD 1 -->
+          <article class="news_card" data-modal="modal-1" data-popup-img="img/n_c_o1.png">
+            <div class="news-card-img-wrap">
+              <img src="img/NEWS_CARDS_01.svg" alt="Hændelse illustration — Grad 3 lækage" loading="lazy" />
+            </div>
+            <div class="news_card-body">
+              <div class="news-meta" style="grid-column: 1/-1">Grad 3 lækage · 14 min siden · Vesterbro</div>
+              <h3>Kronologisk kollaps rapporteret i mindst 14 cases</h3>
+              <div class="news-grad">⚠ Grad 3</div>
+              <p>Hændelsesrækkefølge kan ikke rekonstrueres for de ramte. Systemet anbefaler omgående konsultation af feltguiden og narrativ forankring via monoton 432 Hz-tone.</p>
+              <a class="cta_btn" href="instruction.html">Læs protokollen</a>
+              <button class="news-read-more" data-open="modal-1" aria-label="Læs mere">Udvid ↗</button>
+            </div>
+          </article>
 
-  <details name="accordion">
-    <summary>Jeg genkender ikke mit eget hjem. Er det en lækage?</summary>
-    <div class="content">
-      <p>Sandsynligvis ja. Spatial fremmedgørelse af kendte omgivelser er en klassisk Grad 2-indikator. Påbegynd Protokol v2.4, trin 1: sæt dig ned. Trin 2: identificér tre objekter du kan navngive med sikkerhed. Trin 3: aktiver 432 Hz-tonen. Hvis fremmedgørelsen ikke er reduceret efter 20 minutter, bør du indgive en rapport og undgå spejle indtil videre. Spejle er ikke farlige. De er bare ikke hjælpsomme i denne situation.</p>
-    </div>
-  </details>
+          <!-- NEWS CARD 2 -->
+          <article class="news_card" data-modal="modal-2" data-popup-img="img/n_c_o2.png">
+            <div class="news-card-img-wrap">
+              <img src="img/NEWS_CARDS_02.svg" alt="Hændelse illustration — Grad 2 lækage" loading="lazy" />
+            </div>
+            <div class="news_card-body">
+              <div class="news-meta" style="grid-column: 1/-1">Grad 2 lækage · 1 time siden · Frederiksberg</div>
+              <h3>Ny bølge: Ekstern realitetsintrusion via højre øre</h3>
+              <div class="news-grad">Grad 2</div>
+              <p>Samtaler høres baglæns. Temporale strukturer kompromitteret. Håndtering: undgå kompleks rytmisk musik i 24 timer.</p>
+              <a class="cta_btn" href="register.html">Indberet hændelse</a>
+              <button class="news-read-more" data-open="modal-2" aria-label="Læs mere">Udvid ↗</button>
+            </div>
+          </article>
 
-  <details name="accordion">
-    <summary>Hvem driver Somnus Nødberedskab?</summary>
-    <div class="content">
-      <p>Systemet opererer uafhængigt af kommunal og statslig infrastruktur. Det er ikke tilknyttet sundhedsvæsenet, politiet eller nogen registreret organisation. Finansieringskilden er ikke offentliggjort. Personalet — i den udstrækning begrebet er dækkende — er anonymt af operationelle årsager. Det vi kan oplyse: systemet har eksisteret siden før du blev opmærksom på det, og det vil fortsætte efter du ikke længere har brug for det.</p>
-    </div>
-  </details>
+          <!-- NEWS CARD 3 -->
+          <article class="news_card" data-modal="modal-3" data-popup-img="img/n_c_o3.png">
+            <div class="news-card-img-wrap">
+              <img src="img/NEWS_CARDS_03.svg" alt="Hændelse illustration — Systemstatus" loading="lazy" />
+            </div>
+            <div class="news_card-body">
+              <div class="news-meta" style="grid-column: 1/-1">Opdatering · 3 timer siden · Systemstatus</div>
+              <h3>Drømmekatalog opdateret med 47 nye hændelsesrapporter</h3>
+              <div class="news-grad">Info</div>
+              <p>Systemet registrerer fortsat stigende aktivitet i REM-fase 3–4. Peak-tidspunkt fastholdt ved 03:47 lokal tid.</p>
+              <a class="cta_btn" href="register.html">Bidrag til kataloget</a>
+              <button class="news-read-more" data-open="modal-3" aria-label="Læs mere">Udvid ↗</button>
+            </div>
+          </article>
 
-</section>
+          <!-- NEWS CARD 4 -->
+          <article class="news_card" data-modal="modal-4" data-popup-img="img/n_c_o4.png">
+            <div class="news-card-img-wrap">
+              <img src="img/NEWS_CARDS_04.svg" alt="Hændelse illustration — Grad 1 lækage" loading="lazy" />
+            </div>
+            <div class="news_card-body">
+              <div class="news-meta" style="grid-column: 1/-1">Grad 1 lækage · 5 timer siden · Nørrebro</div>
+              <h3>Olfaktorisk lækage: lugte uden botanisk reference detekteret</h3>
+              <div class="news-grad">Grad 1</div>
+              <p>Jord efter regn og ukendte blomster. Stærke neutrale dufte — kaffegrums eller citrus — anbefales i 3 × 30 sekunders intervaller.</p>
+              <a class="cta_btn" href="instruction.html">Se protokol</a>
+              <button class="news-read-more" data-open="modal-4" aria-label="Læs mere">Udvid ↗</button>
+            </div>
+          </article>
 
+          <!-- NEWS CARD 5 -->
+          <article class="news_card" data-modal="modal-5" data-popup-img="img/n_c_o5.png">
+            <div class="news-card-img-wrap">
+              <img src="img/NEWS_CARDS_05.svg" alt="Hændelse illustration — Grad 2 lækage spatial" loading="lazy" />
+            </div>
+            <div class="news_card-body">
+              <div class="news-meta" style="grid-column: 1/-1">Grad 2 lækage · 7 timer siden · Østerbro</div>
+              <h3>Spatial distortion: kendte rum fremstår ukendte</h3>
+              <div class="news-grad">Grad 2</div>
+              <p>Det venstre øje registrerer rumlig lækage. Fokusér på et fast punkt i 90 sekunder for at recalibrere spatial kortlægning.</p>
+              <a class="cta_btn" href="instruction.html">Kortlæg node-punkt</a>
+              <button class="news-read-more" data-open="modal-5" aria-label="Læs mere">Udvid ↗</button>
+            </div>
+          </article>
 
-    <main></main>
+          <!-- NEWS CARD 6 -->
+          <article class="news_card" data-modal="modal-6" data-popup-img="img/n_c_o6.png">
+            <div class="news-card-img-wrap">
+              <img src="img/NEWS_CARDS_06.svg" alt="Hændelse illustration — Grad 4 portalhændelse" loading="lazy" />
+            </div>
+            <div class="news_card-body">
+              <div class="news-meta" style="grid-column: 1/-1">Grad 4 — AKTIV PORTAL · 12 timer siden · Indre By</div>
+              <h3>Portalhændelse bekræftet — Protokol v2.4 trin 4–7 aktiveret</h3>
+              <div class="news-grad" style="color: #ff3a3a">⚠⚠ Grad 4</div>
+              <p>Direkte stimulering af portalzonen kan resultere i permanent narrativ kohærenstab. Kontakt certificeret drømlækageteknikker omgående.</p>
+              <a class="cta_btn" href="register.html">Akut indberetning</a>
+              <button class="news-read-more" data-open="modal-6" aria-label="Læs mere">Udvid ↗</button>
+            </div>
+          </article>
+        </section>
+      </div>
 
+      <!-- FAQ -->
+      <section class="faq-section">
+        <div class="faq-grid-container">
+          <div class="faq-content-wrapper">
+            <p class="section-label">
+              Hyppigt stillede spørgsmål
+              <span>Protokol v2.4 — godkendt dokumentation</span>
+            </p>
+
+            <details name="accordion">
+              <summary>Hvad er en drømlækage egentlig?</summary>
+              <div class="content">
+                <p>En drømlækage opstår, når det perceptuelle membran mellem REM-tilstand og vågentilstand svækkes tilstrækkeligt til, at drømmemateriale trænger igennem uden kontrolleret overgang.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Er det farligt?</summary>
+              <div class="content">
+                <p>Det afhænger af lækagegraden. Grad 1–2 er ubehagelighed. Grad 4 er en aktiv portalhændelse og kræver omgående aktivering af Protokol v2.4, trin 4–7.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Hvordan ved jeg, om jeg er ramt?</summary>
+              <div class="content">
+                <p>Primære indikatorer: genkendelse af fremmede ansigter som bekendte, lyde hørt i omvendt rækkefølge, og en vedvarende fornemmelse af at befinde sig parallelt med sig selv.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Hvad sker der, når jeg indsender en rapport?</summary>
+              <div class="content">
+                <p>Din rapport anonymiseres og indgår i det kollektive drømmekatalog. Du modtager et sagsnummer inden for én søvncyklus.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Hvad er Protokol v2.4, og hvad erstattede den?</summary>
+              <div class="content">
+                <p>Protokol v2.3 var utilstrækkelig ved Grad 3-hændelser. v2.4 blev implementeret efter hændelserne i uge 34.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Virker 432 Hz-tonen virkelig?</summary>
+              <div class="content">
+                <p>I kontrollerede forsøg: effektiv i 94% af tilfældene. Den fungerer som en akustisk ankerstruktur i det perceptuelle membran.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Kan jeg bruge feltguiden offline?</summary>
+              <div class="content">
+                <p>Ja. Feltguiden er konstrueret til at fungere uden netværksforbindelse efter første indlæsning.</p>
+              </div>
+            </details>
+
+            <details name="accordion">
+              <summary>Hvem driver Somnus Nødberedskab?</summary>
+              <div class="content">
+                <p>Systemet opererer uafhængigt af kommunal infrastruktur. Det har eksisteret siden før du blev opmærksom på det.</p>
+              </div>
+            </details>
+          </div>
+
+          <aside class="faq-sidebar" aria-hidden="true">
+            <!-- intentionally empty — mascot is now #faq-mascot-overlay below -->
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
       <nav>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li><p class="footer-col-label">Navigation</p></li>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="instruction.html">Nærkontakt — Feltguide</a></li>
+          <li><a href="register.html">Indberet lækage</a></li>
         </ul>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li><p class="footer-col-label">Om Somnus</p></li>
+          <li><a href="404.html">Hvad er en drømlækage?</a></li>
+          <li><a href="404.html">Protokol v2.4 — Dokumentation</a></li>
+          <li><a href="404.html">Drømmekatalog</a></li>
         </ul>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li><p class="footer-col-label">System</p></li>
+          <li><a href="404.html">Privatlivspolitik</a></li>
+          <li><a href="404.html">Anonymisering på tværs af søvnstadier</a></li>
+          <li><a href="404.html">Kontakt nødberedskabet</a></li>
         </ul>
       </nav>
+      <p class="footer-disclaimer">
+        <span>SOMNUS Drømlækage Nødberedskab — Protokol v2.4</span>
+        <span>Behandlingstid: 3–5 søvncyklusser. Anonymisering kan ikke garanteres på tværs af søvnstadier.</span>
+      </p>
     </footer>
+
+    <!--  NEWS POPUP MODALS  -->
+
+    <div class="news-modal-overlay" id="modal-1" role="dialog" aria-modal="true" aria-label="Kronologisk kollaps">
+      <div class="news-modal">
+        <div class="news-modal-img">
+          <img src="img/NEWS_CARDS_01.svg" alt="" loading="lazy" />
+        </div>
+        <div class="news-modal-content">
+          <div class="news-modal-meta">Grad 3 lækage · 14 min siden · Vesterbro</div>
+          <div class="news-modal-grad">⚠ Grad 3 — Kritisk</div>
+          <h2>Kronologisk kollaps rapporteret i mindst 14 cases</h2>
+          <p>Hændelsesrækkefølge kan ikke rekonstrueres for de ramte. Tidslinjerne er fragmenterede på en måde, der antyder en dybere strukturel fejl i det perceptuelle membran.</p>
+          <p>Systemet anbefaler omgående konsultation af feltguiden og narrativ forankring via monoton 432 Hz-tone i minimum 20 minutter. Undgå kompleks stimulering i 4 timer efter opvågning.</p>
+          <p>Koordinater for epicentret er registreret. Naboer i en radius af 400 meter anbefales øget årvågenhed næste søvncyklus.</p>
+          <div class="news-modal-actions">
+            <a href="instruction.html" class="btn-primary">Konsultér feltguiden →</a>
+            <button class="news-modal-close" data-close="modal-1">Luk <span>[ESC]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-modal-overlay" id="modal-2" role="dialog" aria-modal="true" aria-label="Ekstern realitetsintrusion">
+      <div class="news-modal">
+        <div class="news-modal-img">
+          <img src="img/NEWS_CARDS_02.svg" alt="" loading="lazy" />
+        </div>
+        <div class="news-modal-content">
+          <div class="news-modal-meta">Grad 2 lækage · 1 time siden · Frederiksberg</div>
+          <div class="news-modal-grad">Grad 2 — Forhøjet</div>
+          <h2>Ny bølge: Ekstern realitetsintrusion via højre øre</h2>
+          <p>Samtaler høres baglæns. Temporale strukturer er kompromitterede i de ramte. Det højre øre behandler temporale lyde — rækkefølgen af hændelser opløses.</p>
+          <p>Håndtering: undgå musik med kompleks rytmisk struktur i 24 timer. Monotone toner på 432 Hz har vist stabiliserende effekt på narrativ kohærens.</p>
+          <div class="news-modal-actions">
+            <a href="register.html" class="btn-primary">Indberet hændelse →</a>
+            <button class="news-modal-close" data-close="modal-2">Luk <span>[ESC]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-modal-overlay" id="modal-3" role="dialog" aria-modal="true" aria-label="Systemstatus opdatering">
+      <div class="news-modal">
+        <div class="news-modal-img">
+          <img src="img/NEWS_CARDS_03.svg" alt="" loading="lazy" />
+        </div>
+        <div class="news-modal-content">
+          <div class="news-modal-meta">Opdatering · 3 timer siden · Systemstatus</div>
+          <div class="news-modal-grad" style="color: #9dbef3; background: rgba(157, 190, 243, 0.1); border-color: #9dbef3">Info — Nominelt</div>
+          <h2>Drømmekatalog opdateret med 47 nye hændelsesrapporter</h2>
+          <p>Systemet registrerer fortsat stigende aktivitet i REM-fase 3–4. Peak-tidspunkt fastholdt ved 03:47 lokal tid. Alle protokoller nominelle.</p>
+          <p>Det kollektive drømmekatalog er nu tilgængeligt for registrerede brugere. Dine bidrag hjælper systemet med at kortlægge lækageaktivitet og forbedre responsprotokollerne.</p>
+          <div class="news-modal-actions">
+            <a href="register.html" class="btn-primary">Bidrag til kataloget →</a>
+            <button class="news-modal-close" data-close="modal-3">Luk <span>[ESC]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-modal-overlay" id="modal-4" role="dialog" aria-modal="true" aria-label="Olfaktorisk lækage">
+      <div class="news-modal">
+        <div class="news-modal-img">
+          <img src="img/NEWS_CARDS_04.svg" alt="" loading="lazy" />
+        </div>
+        <div class="news-modal-content">
+          <div class="news-modal-meta">Grad 1 lækage · 5 timer siden · Nørrebro</div>
+          <div class="news-modal-grad">Grad 1 — Let forhøjet</div>
+          <h2>Olfaktorisk lækage: lugte uden botanisk reference detekteret</h2>
+          <p>Lugte fra drømmescenarier persisterer i vågentilstand. Hyppigst rapporteret: jord efter regn, brændende materiale og ukendte blomster uden botanisk reference.</p>
+          <p>Stærke neutrale dufte — f.eks. kaffegrums eller citrus — kan afbryde den olfaktoriske lækagecyklus. Anvendes i 3 × 30 sekunders intervaller.</p>
+          <div class="news-modal-actions">
+            <a href="instruction.html" class="btn-primary">Se protokol →</a>
+            <button class="news-modal-close" data-close="modal-4">Luk <span>[ESC]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-modal-overlay" id="modal-5" role="dialog" aria-modal="true" aria-label="Spatial distortion">
+      <div class="news-modal">
+        <div class="news-modal-img">
+          <img src="img/NEWS_CARDS_05.svg" alt="" loading="lazy" />
+        </div>
+        <div class="news-modal-content">
+          <div class="news-modal-meta">Grad 2 lækage · 7 timer siden · Østerbro</div>
+          <div class="news-modal-grad">Grad 2 — Forhøjet</div>
+          <h2>Spatial distortion: kendte rum fremstår ukendte</h2>
+          <p>Det venstre øje registrerer rumlig lækage: kendte rum fremstår ukendte, afstande er fordrejede og arkitektur følger drømmens geometri frem for virkelighedens.</p>
+          <p>Fokusér på et fast punkt i 90 sekunder. Hjernens spatiale kortlægning recalibreres via vedvarende visuel forankring til et stabilt objekt i det fysiske rum. Undgå spejle indtil videre.</p>
+          <div class="news-modal-actions">
+            <a href="instruction.html" class="btn-primary">Kortlæg node-punkt →</a>
+            <button class="news-modal-close" data-close="modal-5">Luk <span>[ESC]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-modal-overlay" id="modal-6" role="dialog" aria-modal="true" aria-label="Grad 4 portalhændelse">
+      <div class="news-modal">
+        <div class="news-modal-img">
+          <img src="img/NEWS_CARDS_06.svg" alt="" loading="lazy" />
+        </div>
+        <div class="news-modal-content">
+          <div class="news-modal-meta">Grad 4 — AKTIV PORTAL · 12 timer siden · Indre By</div>
+          <div class="news-modal-grad" style="color: #ff3a3a; background: rgba(255, 58, 58, 0.1); border-color: #ff3a3a">⚠⚠ GRAD 4 — KRITISK</div>
+          <h2>Portalhændelse bekræftet — Protokol v2.4 trin 4–7 aktiveret</h2>
+          <p>Portalen er det anatomiske punkt hvor drømmemateriale krydser grænsen til bevidst perception. Grad 3+ lækager passerer primært via denne kanal.</p>
+          <p>Direkte stimulering af portalzonen under aktiv lækage kan resultere i permanent narrativ kohærenstab. Kontakt certificeret drømlækageteknikker omgående. Dette er ikke en øvelse.</p>
+          <p>Koordinater er indsendt til det centrale register. Beboere i en radius af 1 km anbefales at aktivere Protokol v2.4, trin 1–3, som forebyggende foranstaltning.</p>
+          <div class="news-modal-actions">
+            <a href="register.html" class="btn-primary" style="background: #ff3a3a; border-color: #ff3a3a">Akut indberetning →</a>
+            <button class="news-modal-close" data-close="modal-6">Luk <span>[ESC]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ MASCOT — fixed overlay, controlled by swing.js -->
+    <div id="faq-mascot-overlay" aria-hidden="true">
+      <span class="mascot-status-tag">SYSTEM INTRUSION DETEKTERET</span>
+      <img src="img/dream_mascot.svg" alt="" data-faq-mascot />
+      <div class="mascot-data-readout">
+        <span>COORDINATES: [55.6761° N, 12.5683° E]</span>
+        <span>STATUS: OBSERVING_USER</span>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/swing.js"></script>
     <script src="js/burger.js"></script>
+    <script src="js/mono.js"></script>
   </body>
 </html>

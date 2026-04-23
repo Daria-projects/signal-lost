@@ -1,17 +1,20 @@
 #head-txt {
-  fill: rgb(54, 54, 54);
+  fill: var(--color-text-muted);
 }
 
 .info-graphic,
 .info-text {
   background-color: var(--color-info-bg);
   padding: 20px 0;
+  margin: 0 1rem;
 }
 
 .info-graphic {
   position: relative;
   border-radius: 0;
-  margin: 0;
+  margin: 0 1rem;
+  overflow: hidden;
+  max-height: 100vh;
 }
 
 /* INFO TEXT PANEL */
@@ -98,6 +101,7 @@
 #eye_left_planet.active,
 #eye_right_star.active {
   opacity: 1;
+  -webkit-filter: drop-shadow(0 0 6px #fff3a5) drop-shadow(0 0 4px #fff3a5) drop-shadow(0 0 2px #fff3a5);
   filter: drop-shadow(0 0 6px #fff3a5) drop-shadow(0 0 4px #fff3a5) drop-shadow(0 0 2px #fff3a5);
 }
 
@@ -105,14 +109,17 @@
 
 @keyframes portal-pulse {
   0% {
+    -webkit-filter: drop-shadow(0 0 3px #fff3a5) drop-shadow(0 0 2px #fff3a5);
     filter: drop-shadow(0 0 3px #fff3a5) drop-shadow(0 0 2px #fff3a5);
     opacity: 1;
   }
   50% {
+    -webkit-filter: drop-shadow(0 0 10px #fff3a5) drop-shadow(0 0 6px #fff3a5) drop-shadow(0 0 3px #fff3a5);
     filter: drop-shadow(0 0 10px #fff3a5) drop-shadow(0 0 6px #fff3a5) drop-shadow(0 0 3px #fff3a5);
     opacity: 0.85;
   }
   100% {
+    -webkit-filter: drop-shadow(0 0 3px #fff3a5) drop-shadow(0 0 2px #fff3a5);
     filter: drop-shadow(0 0 3px #fff3a5) drop-shadow(0 0 2px #fff3a5);
     opacity: 1;
   }
@@ -132,7 +139,7 @@
   justify-content: space-between;
   padding: 1.5rem 1rem;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -146,12 +153,14 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-logotype);
-  opacity: 0.06;
+  opacity: 0.15;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
 }
 
 .bg-text span:nth-child(even) {
-  opacity: 0.03;
+  opacity: 0.10;
 }
 
 /* SVG */
@@ -166,4 +175,30 @@
 }
 #ear_right .cls-16 {
   fill: #f09e9a;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.buttons-wrapper button {
+  padding: 10px 20px;
+  background-color: var(--color-link-bg);
+  color: var(--color-text-strong);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family-mono);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttons-wrapper button:hover,
+.buttons-wrapper button:focus {
+  background-color: var(--color-link-hover);
+  outline: 1px solid var(--color-text-strong);
 }
