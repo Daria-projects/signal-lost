@@ -119,6 +119,7 @@ header nav a.menuItem:focus-visible {
 
 /*  HEADINGS  */
 h1 {
+  font-family: var(--font-family-mono);
   font-size: var(--font-h1-size);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-strong);
@@ -127,6 +128,7 @@ h1 {
 }
 
 h2 {
+  font-family: var(--font-family-mono);
   font-size: var(--font-h2-size);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-strong);
@@ -151,7 +153,7 @@ h3 {
   border-bottom: 2px solid var(--color-accent);
 }
 
-#instruction p {
+#instruction main p {
   margin-bottom: 20px;
   font-size: var(--font-sub1-size);
   color: var(--color-text);
