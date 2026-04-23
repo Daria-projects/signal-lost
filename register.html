@@ -5,20 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="css/fonts.css" />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
+    <link rel="stylesheet" href="css/cards.css" />
     <link rel="stylesheet" href="css/forms.css" />
-    <link rel="icon" type="image/png" href="img/change_me.png" />
-    <title>Emergency Site</title>
+    <link rel="stylesheet" href="css/mono.css" />
+    <link rel="icon" type="image/png" href="img/fav.png" />
+    <title>SOMNUS — Indberet lækage</title>
   </head>
 
   <body id="register">
     <header>
       <nav>
         <div id="logotype-wrapper" class="logo">
-          <a href="index.html"> LOGO-TYPE </a>
+          <a href="index.html">
+            <!-- LOGO SOMNUS SVG -->
+            <svg class="logo-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.83 41.82" aria-hidden="true">
+              <path
+                d="M15.92,41.82C7.14,41.82,0,33.19,0,22.58S7.14,3.33,15.92,3.33s15.92,8.63,15.92,19.25-7.14,19.24-15.92,19.24ZM15.92,4.08C7.55,4.08.75,12.38.75,22.58s6.8,18.49,15.17,18.49,15.17-8.3,15.17-18.49S24.28,4.08,15.92,4.08Z"
+                fill="#9dbef3"
+              />
+              <circle cx="15.92" cy="5.93" r="5.55" fill="none" stroke="#e85d5d" stroke-miterlimit="10" stroke-width=".75" />
+              <circle cx="15.92" cy="5.93" r="1.94" fill="#e85d5d" />
+              <line x1="15.92" y1="11.48" x2="15.92" y2="5.83" fill="none" stroke="#e85d5d" stroke-miterlimit="10" stroke-width=".75" />
+              <circle cx="10.92" cy="20.36" r="1.94" fill="none" stroke="#9dbef3" stroke-miterlimit="10" stroke-width=".75" />
+              <circle cx="20.36" cy="20.36" r="1.94" fill="#9dbef3" />
+              <rect x="10.37" y="28.13" width="11.1" height="2.78" rx=".15" ry=".15" fill="none" stroke="#9dbef3" stroke-miterlimit="10" stroke-width=".75" />
+            </svg>
+            SOMNUS
+          </a>
         </div>
         <ul class="menu">
           <li><a class="menuItem" href="instruction.html">Nærkontakt</a></li>
@@ -203,30 +219,35 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
       <nav>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li><p class="footer-col-label">Navigation</p></li>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="instruction.html">Nærkontakt — Feltguide</a></li>
+          <li><a href="register.html">Indberet lækage</a></li>
         </ul>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li><p class="footer-col-label">Om Somnus</p></li>
+          <li><a href="404.html">Hvad er en drømlækage?</a></li>
+          <li><a href="404.html">Protokol v2.4 — Dokumentation</a></li>
+          <li><a href="404.html">Drømmekatalog</a></li>
         </ul>
         <ul>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
+          <li><p class="footer-col-label">System</p></li>
+          <li><a href="404.html">Privatlivspolitik</a></li>
+          <li><a href="404.html">Anonymisering på tværs af søvnstadier</a></li>
+          <li><a href="404.html">Kontakt nødberedskabet</a></li>
         </ul>
       </nav>
+      <p class="footer-disclaimer">
+        <span>SOMNUS Drømlækage Nødberedskab — Protokol v2.4</span>
+        <span>Behandlingstid: 3–5 søvncyklusser. Anonymisering kan ikke garanteres på tværs af søvnstadier.</span>
+      </p>
     </footer>
-
     <script src="js/burger.js"></script>
     <script src="js/forms.js"></script>
+    <script src="js/mono.js"></script>
   </body>
 </html>
