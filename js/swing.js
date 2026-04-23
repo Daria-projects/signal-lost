@@ -1,8 +1,8 @@
 /*
- * ── SOMNUS INTERFACE LOGIC ────────────────────────────────
+ *  SOMNUS INTERFACE LOGIC
  */
 (function () {
-  // ── 1. SWING — tilt [data-swing] elements toward mouse ──
+  //  1. SWING — tilt [data-swing] elements toward mouse
   (function initSwing() {
     const MAX_DEG = 4;
     const REACH_PX = 500;
@@ -39,7 +39,7 @@
     });
   })();
 
-  // ── 2. FAQ MASCOT — fixed overlay that peeks up while FAQ is visible ──
+  //  2. FAQ MASCOT — fixed overlay that peeks up while FAQ is visible
   (function initFaqMascot() {
     const overlay = document.getElementById("faq-mascot-overlay");
     const faqSection = document.querySelector(".faq-section");
@@ -90,7 +90,7 @@
     });
   })();
 
-  // ── 3. MODALS — news card click to open ──
+  //  3. MODALS — news card click to open
   (function initModals() {
     const overlays = document.querySelectorAll(".news-modal-overlay");
 

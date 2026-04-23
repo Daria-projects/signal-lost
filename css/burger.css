@@ -1,4 +1,4 @@
-/* --- GLOBAL STYLES (Desktop & Mobile) --- */
+/*  GLOBAL STYLES (Desktop & Mobile)  */
 .burger {
   width: 30px;
   height: 20px;
@@ -15,7 +15,8 @@
   transition: 0.2s linear;
 }
 
-/* --- MOBILE ONLY STYLES --- */
+/*  MOBILE ONLY STYLES  */
+
 @media screen and (width < 800px) {
   .burger {
     display: block; /* Show the burger on mobile */
