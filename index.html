@@ -53,53 +53,56 @@
     <!-- STATUS TICKER -->
     <div id="status-ticker" aria-hidden="true">
       <div class="ticker-inner">
-        <span>Aktuel lækagegrad: FORHØJET</span>
-        <span class="muted">Seneste hændelse: 14 min siden</span>
-        <span>Drøm-REM-frekvens: 4–8 Hz</span>
+        <span>Lækagegrad: FORHØJET</span>
+        <span class="muted">Sidste melding: 14 min siden</span>
+        <span>Frekvens: 4–8 Hz — svag og vedvarende</span>
         <span class="muted">Koordinat: 55.6761° N / 12.5683° Ø</span>
-        <span>Protokol v2.4 — AKTIV</span>
+        <span>Protokol v2.4 — stadig i gang</span>
         <span class="muted">Behandlingstid: 3–5 søvncyklusser</span>
-        <span>Nye sager i dag: 47</span>
-        <span class="muted">Somnus nødberedskab — Stand by</span>
-        <span>Aktuel lækagegrad: FORHØJET</span>
-        <span class="muted">Seneste hændelse: 14 min siden</span>
-        <span>Drøm-REM-frekvens: 4–8 Hz</span>
+        <span>47 nye meldinger i dag</span>
+        <span class="muted">Somnus lytter — vent venligst</span>
+        <span>Lækagegrad: FORHØJET</span>
+        <span class="muted">Sidste melding: 14 min siden</span>
+        <span>Frekvens: 4–8 Hz — svag og vedvarende</span>
         <span class="muted">Koordinat: 55.6761° N / 12.5683° Ø</span>
-        <span>Protokol v2.4 — AKTIV</span>
+        <span>Protokol v2.4 — stadig i gang</span>
         <span class="muted">Behandlingstid: 3–5 søvncyklusser</span>
-        <span>Nye sager i dag: 47</span>
-        <span class="muted">Somnus nødberedskab — Stand by</span>
+        <span>47 nye meldinger i dag</span>
+        <span class="muted">Somnus lytter — vent venligst</span>
       </div>
     </div>
 
-    <!-- ALERT BANNER -->
+    <!-- HERO — high tension collage -->
     <section id="main-disclaimer">
       <div id="main-disclaimer-content">
-        <div>
-          <div id="alert-level">Nødberedskab aktiveret — Grad 2</div>
-          <h1>Drømlækage<br />detekteret.<em>*</em></h1>
-          <p class="sub">Dit narrative system er kompromitteret. Drømmemateriale trænger ind i vågentilstanden med stigende frekvens. Vi har protokollerne. Du har stadig tid.</p>
-          <div id="main-disclaimer-cta">
-            <a href="instruction.html" class="btn-primary">Konsultér feltguiden →</a>
-            <a href="register.html" class="btn-secondary">Indgiv rapport</a>
+        <!-- H1 LINE 1 — top, slams left, overflows right -->
+        <div id="hero-h1-top" aria-hidden="true">
+          <span>Drømlækage</span>
+        </div>
+
+        <!-- ILLUSTRATION — absolute background object -->
+        <div id="hero-illustration" aria-hidden="true">
+          <div class="dream-glow"></div>
+          <div class="dream-particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span> <span></span><span></span><span></span><span></span><span></span></div>
+          <div data-swing>
+            <img src="img/mobile.svg" alt="Illustration af en mobile hvorfra drømmemateriale lækker ud" width="680" height="510" loading="lazy" decoding="async" />
           </div>
         </div>
 
-        <div class="bg-watermark" aria-hidden="true">SOMNUS</div>
+        <!-- H1 LINE 2 — bottom, pushed right, sits on illustration -->
+        <div id="hero-h1-bottom">
+          <h1 data-text="detekteret.*">detekteret.<em role="button" aria-expanded="false" aria-controls="hero-text" tabindex="0" title="Åbn information">*</em></h1>
+        </div>
+
+        <!-- SUB + CTA — bottom-left, small, grounded -->
+        <div id="hero-text">
+          <p class="sub">Du kender fornemmelsen. Et billede der ikke er dit. En stemme fra et sted du aldrig har været. Det er ikke farligt. Men det bør skrives ned.</p>
+          <div id="main-disclaimer-cta">
+            <a href="instruction.html" class="btn-primary">Konsultér feltguiden →</a>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- MOBILE ILLUSTRATION -->
-    <div id="mobile-illustration">
-      <p class="illu-label">Drømlækage — visualiseret</p>
-      <div data-swing aria-hidden="true">
-        <img src="img/mobile.svg" alt="Illustration af en mobile hvorfra drømmemateriale lækker ud" width="680" height="510" loading="lazy" decoding="async" />
-      </div>
-      <p class="illu-caption">
-        Dit narrative system er kompromitteret.<br />
-        <em>Drømmemateriale detekteret</em> — Grad 2 lækage i gang.
-      </p>
-    </div>
 
     <!-- MAIN CONTENT -->
     <main>
@@ -476,7 +479,7 @@
     <!-- FAQ MASCOT — fixed overlay, controlled by swing.js -->
     <div id="faq-mascot-overlay" aria-hidden="true">
       <span class="mascot-status-tag">SYSTEM INTRUSION DETEKTERET</span>
-      <img src="img/dream_mascot.svg" alt="" data-faq-mascot />
+      <img src="img/Dream_mascot_greyish.svg" alt="" data-faq-mascot />
       <div class="mascot-data-readout">
         <span>COORDINATES: [55.6761° N, 12.5683° E]</span>
         <span>STATUS: OBSERVING_USER</span>

@@ -40,107 +40,548 @@
   }
 }
 
-/*  ALERT BANNER  */
+/*  ═══════════════════════════════════════════════
+    HERO — HIGH TENSION COLLAGE
+    Every element is absolutely positioned.
+    Nothing flows. Everything is placed.
+    ═══════════════════════════════════════════════ */
+
 #main-disclaimer {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: clamp(320px, 55vh, 600px);
-  display: flex;
-  align-items: center;
-  padding: 3.5rem 0;
-  background: linear-gradient(180deg, var(--color-surface-mid) 0%, var(--color-bg) 100%);
+  height: clamp(600px, 88vh, 960px);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Content container */
-#main-disclaimer-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* The single text block inside main-disclaimer-content */
-#main-disclaimer-content > div {
-  max-width: 820px;
-  width: 100%;
-}
-
-#alert-level {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-family-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  background-color: rgba(232, 93, 93, 0.1);
-  border: 1px solid var(--color-accent);
-  padding: 0.35rem 0.8rem;
-  margin-bottom: 1rem;
-}
-
-#alert-level::before {
+/* Scanline grain */
+#main-disclaimer::before {
   content: "";
-  display: inline-block;
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(157, 190, 243, 0.009) 2px, rgba(157, 190, 243, 0.009) 3px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container — full bleed, positions children */
+#main-disclaimer-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+/* ── VERTICAL RAIL — removed from layout ──────── */
+#hero-rail {
+  display: none;
+}
+#alert-level {
+  display: none;
+}
+
+/* ── H1 LINE 1 ─────────────────────────────────
+   "Drømlækage" — inset from edge, overflows right */
+#hero-h1-top {
+  position: absolute;
+  top: clamp(1.5rem, 4vh, 3.5rem);
+  left: clamp(1.5rem, 3.5vw, 4rem); /* fluid gutter — never touches the edge */
+  right: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+
+#hero-h1-top span {
+  display: block;
+  font-family: var(--font-family-mono);
+  font-size: clamp(3.5rem, 8vw, 9vw); /* halved — still editorial, not overpowering */
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  color: var(--color-text-strong);
+  white-space: nowrap;
+  /* Reduced shadow — was so dark it buried the ghost underneath */
+  text-shadow:
+    0 0 60px rgba(10, 8, 20, 0.95),
+    0 0 20px rgba(10, 8, 20, 0.8),
+    0 2px 8px rgba(10, 8, 20, 0.6);
+  position: relative;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ghost A+D — z-index removed (was -1, hid it behind the section background).
+   ::before paints before the text in stacking order → visually behind it. */
+#hero-h1-top span::before {
+  content: "Drømlækage";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  white-space: inherit;
+  color: #5c7dbf;
+  filter: blur(12px);
+  opacity: 0.65;
+  pointer-events: none;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  user-select: none;
+}
+
+/* ── ILLUSTRATION ──────────────────────────────
+   Centered across full hero width — backdrops
+   BOTH headline lines. Top line ghost becomes
+   visible against the periwinkle shapes. */
+#hero-illustration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* wider — fills more of the hero */
+  height: 130%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.dream-glow {
+  position: absolute;
+  inset: -20% -10% -20% -35%;
+  background:
+    radial-gradient(ellipse 80% 65% at 50% 50%, rgba(92, 125, 191, 0.28) 0%, transparent 60%), radial-gradient(ellipse 45% 35% at 30% 25%, rgba(232, 93, 93, 0.15) 0%, transparent 52%),
+    radial-gradient(ellipse 55% 45% at 68% 78%, rgba(157, 190, 243, 0.12) 0%, transparent 56%);
+  pointer-events: none;
+  animation: glow-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes glow-drift {
+  0% {
+    opacity: 0.7;
+    transform: scale(1) translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-12px);
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(0.96) translateY(6px);
+  }
+}
+
+.dream-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dream-particles span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-float var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
+}
+
+.dream-particles span:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  background: rgba(232, 93, 93, 0.5);
+  left: 18%;
+  top: 22%;
+  --dur: 8s;
+  --delay: 0s;
+}
+.dream-particles span:nth-child(2) {
+  width: 3px;
+  height: 3px;
+  background: rgba(157, 190, 243, 0.4);
+  left: 72%;
+  top: 15%;
+  --dur: 11s;
+  --delay: 1.5s;
+}
+.dream-particles span:nth-child(3) {
+  width: 5px;
+  height: 5px;
+  background: rgba(92, 125, 191, 0.35);
+  left: 38%;
+  top: 68%;
+  --dur: 9s;
+  --delay: 3s;
+}
+.dream-particles span:nth-child(4) {
+  width: 2px;
+  height: 2px;
+  background: rgba(232, 93, 93, 0.6);
+  left: 82%;
+  top: 52%;
+  --dur: 13s;
+  --delay: 0.7s;
+}
+.dream-particles span:nth-child(5) {
   width: 6px;
   height: 6px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  animation: pulse-dot 1.4s ease-in-out infinite;
+  background: rgba(157, 190, 243, 0.25);
+  left: 55%;
+  top: 80%;
+  --dur: 10s;
+  --delay: 2s;
+}
+.dream-particles span:nth-child(6) {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 107, 107, 0.4);
+  left: 28%;
+  top: 40%;
+  --dur: 7s;
+  --delay: 4s;
+}
+.dream-particles span:nth-child(7) {
+  width: 4px;
+  height: 4px;
+  background: rgba(92, 125, 191, 0.5);
+  left: 90%;
+  top: 35%;
+  --dur: 12s;
+  --delay: 1s;
+}
+.dream-particles span:nth-child(8) {
+  width: 2px;
+  height: 2px;
+  background: rgba(157, 190, 243, 0.6);
+  left: 12%;
+  top: 75%;
+  --dur: 9s;
+  --delay: 5s;
+}
+.dream-particles span:nth-child(9) {
+  width: 5px;
+  height: 5px;
+  background: rgba(232, 93, 93, 0.2);
+  left: 65%;
+  top: 60%;
+  --dur: 14s;
+  --delay: 2.5s;
+}
+.dream-particles span:nth-child(10) {
+  width: 3px;
+  height: 3px;
+  background: rgba(157, 190, 243, 0.45);
+  left: 45%;
+  top: 25%;
+  --dur: 11s;
+  --delay: 6s;
 }
 
-@keyframes pulse-dot {
+@keyframes particle-float {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.2);
+  }
+}
+
+#hero-illustration [data-swing] img {
+  width: min(860px, 78vw);
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  /*  Tint approach: sepia(1) normalises every SVG colour to one warm tone
+      so hue-rotate lands consistently — no shape gets a different hue.
+      Result sits in the #5c7dbf family: muted, mid-value periwinkle.
+      mix-blend-mode: normal keeps it as a solid third layer (screen was
+      eating the dark parts of the SVG and producing hot, uneven highlights). */
+  filter: sepia(1) hue-rotate(190deg) saturate(0.72) brightness(0.82) drop-shadow(0 32px 80px rgba(0, 0, 0, 0.6));
+  opacity: 0.52;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dream-glow,
+  .dream-particles span {
+    animation: none;
+    opacity: 0.6;
+  }
+  /* Disable ghost drift — static ghost (A) remains visible */
+  #hero-h1-top span,
+  #hero-h1-top span::before,
+  #hero-h1-bottom h1,
+  #hero-h1-bottom h1::before {
+    transition: none;
+  }
+  #main-disclaimer:hover #hero-h1-top span,
+  #main-disclaimer:hover #hero-h1-bottom h1 {
+    transform: none;
+  }
+  #main-disclaimer:hover #hero-h1-top span::before,
+  #main-disclaimer:hover #hero-h1-bottom h1::before {
+    transform: none;
+  }
+  /* Suppress asterisk pulse — keep it visible but static */
+  #hero-h1-bottom h1 em {
+    animation: none;
+  }
+  /* Suppress hero-text slide — fade only */
+  #hero-text {
+    transform: translateY(-50%) translateX(0);
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s;
+  }
+}
+
+/* ── H1 LINE 2 ─────────────────────────────────
+   "detekteret." — bottom of hero, right-aligned,
+   crashes across the illustration. */
+#hero-h1-bottom {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vh, 3.5rem);
+  left: 0;
+  right: clamp(1.5rem, 3.5vw, 4rem); /* mirrors top-left gutter */
+  z-index: 18;
+  text-align: right;
+  pointer-events: none;
+}
+
+#hero-h1-bottom h1 {
+  display: inline-block;
+  font-size: clamp(3.5rem, 8vw, 9vw); /* matches line 1 exactly */
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  color: var(--color-text-strong);
+  white-space: nowrap;
+  text-shadow:
+    0 0 60px rgba(10, 8, 20, 0.95),
+    0 0 20px rgba(10, 8, 20, 0.8),
+    0 2px 8px rgba(10, 8, 20, 0.6);
+  position: relative;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ghost z-index removed — was hiding behind section background */
+#hero-h1-bottom h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  right: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  white-space: inherit;
+  text-align: right;
+  color: #5c7dbf;
+  filter: blur(12px);
+  opacity: 0.65;
+  pointer-events: none;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  user-select: none;
+}
+
+/* ── ASTERISK TRIGGER ──────────────────────────
+   The * is the only interactive element in the
+   hero initially. Pointer-events: auto overrides
+   the parent's none. Pulse signals clickability.
+   On reveal, pulse halts and a glow confirms state. */
+@keyframes asterisk-pulse {
   0%,
   100% {
     opacity: 1;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.5;
+    transform: scale(1.25);
+  }
+}
+
+#hero-h1-bottom h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+  font-size: 0.42em;
+  vertical-align: super;
+  margin-left: 0.06em;
+  display: inline-block;
+  pointer-events: auto; /* overrides parent pointer-events: none */
+  cursor: pointer;
+  animation: asterisk-pulse 2.8s ease-in-out infinite;
+  transition:
+    filter 0.3s ease,
+    color 0.3s ease;
+  user-select: none;
+}
+
+#hero-h1-bottom h1 em:hover {
+  filter: brightness(1.4) drop-shadow(0 0 6px var(--color-accent));
+}
+
+/* Revealed state — pulse stops, asterisk glows as confirmation */
+#main-disclaimer.revealed #hero-h1-bottom h1 em {
+  animation: none;
+  color: var(--color-text-strong);
+  filter: drop-shadow(0 0 10px var(--color-accent));
+}
+
+/* ── HOVER DRIFT (effect D)
+   Line 1 slides right, its ghost slides left.
+   Line 2 slides left, its ghost slides right.
+   The two headline lines pull away from each other —
+   reality and the dream trying to separate. */
+#main-disclaimer:hover #hero-h1-top span {
+  transform: translateX(8px);
+}
+#main-disclaimer:hover #hero-h1-top span::before {
+  transform: translateX(-14px);
+}
+#main-disclaimer:hover #hero-h1-bottom h1 {
+  transform: translateX(-8px);
+}
+#main-disclaimer:hover #hero-h1-bottom h1::before {
+  transform: translateX(14px);
+}
+
+/* ── SUB + CTA ─────────────────────────────────
+   Hidden until the asterisk is clicked.
+   Slides in from left + fades up on reveal.
+   translateY(-50%) is the vertical centering anchor —
+   translateX is layered on top for the slide animation. */
+#hero-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-12px);
+  left: clamp(1.5rem, 3.5vw, 4rem); /* same gutter as H1-top */
+  max-width: 28ch;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    visibility 0.55s;
+}
+
+#main-disclaimer.revealed #hero-text {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+#hero-text .sub {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--color-text); /* was --color-text-muted (#a5b8d4) — too grey over illustration */
+  margin-bottom: 1.25rem;
+  /* Same dark-knockout text-shadow technique as the H1 lines —
+     pushes the illustration back so letters always read cleanly */
+  text-shadow:
+    0 0 28px rgba(10, 8, 20, 1),
+    0 0 10px rgba(10, 8, 20, 0.95),
+    0 1px 5px rgba(10, 8, 20, 0.85);
+}
+
+#main-disclaimer-cta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── MOBILE ────────────────────────────────────*/
+@media (max-width: 1024px) {
+  #main-disclaimer {
+    height: auto;
+    min-height: 0;
+    overflow: hidden; /* was visible — ghost ::before was bleeding off-screen */
+  }
+  #main-disclaimer-content {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2.5rem 0;
+  }
+  #hero-h1-top {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
+  }
+  #hero-h1-top span {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+    white-space: normal;
+    overflow-wrap: break-word; /* safety net for long Danish compound words */
+  }
+  #hero-illustration {
+    position: relative;
+    top: auto;
+    left: auto; /* CRITICAL: desktop sets left:50% — without this reset, position:relative + left:50% slides the whole illustration off to the right */
+    right: auto;
+    transform: none;
+    width: 100%;
+    height: 240px;
+    margin: 0;
+    justify-content: center;
+  }
+  #hero-illustration [data-swing] img {
+    width: min(340px, 85vw);
+  }
+  #hero-h1-bottom {
+    position: relative;
+    bottom: auto;
+    text-align: left;
+    right: auto;
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
+  }
+  #hero-h1-bottom h1 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+    display: block; /* was inline-block — broke wrapping */
+    white-space: normal; /* was nowrap — blew the page width open */
+    overflow-wrap: break-word;
+  }
+  #hero-text {
+    position: relative;
+    top: auto;
+    transform: translateX(-8px);
+    left: auto;
+    max-width: 38ch; /* was none — full-width lines are too long to read */
+    margin-top: 1.5rem;
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
+  }
+  #main-disclaimer.revealed #hero-text {
+    transform: translateX(0);
+  }
+  /* On mobile the sub text sits on dark bg below the illustration —
+     reset the desktop text-shadow, bump size a touch for small screens */
+  #hero-text .sub {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    text-shadow: none;
   }
 }
 
 main section:not(#main-disclaimer) {
   padding: 20px;
   border-radius: var(--border-radius);
-}
-
-#main-disclaimer h1 {
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--color-text-strong);
-  margin-bottom: 0.5rem;
-}
-
-#main-disclaimer h1 em {
-  font-style: normal;
-  color: var(--color-accent);
-  font-size: 0.6em;
-  vertical-align: super;
-  margin-left: 0.1em;
-}
-
-#main-disclaimer .sub {
-  margin-top: 0.75rem;
-  max-width: 52ch;
-  line-height: 1.65;
-  font-size: 1.05rem;
-  color: var(--color-text);
-}
-
-#main-disclaimer-cta {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -164,95 +605,11 @@ main section:not(#main-disclaimer) {
   color: var(--color-accent);
 }
 
-.btn-secondary {
-  font-family: var(--font-family-mono);
-  font-size: 0.7rem;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.65rem 1.25rem;
-  background-color: transparent;
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
-  transition:
-    border-color 0.15s,
-    color 0.15s;
-}
+/* btn-secondary removed - only one CTA button */
 
-.btn-secondary:hover {
-  border-color: var(--color-text-muted);
-  color: var(--color-text-strong);
-}
-
-/* Banner bg watermark — right-anchored, spans ~2/3 of viewport */
-#main-disclaimer .bg-watermark {
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-family: var(--font-family-mono);
-  font-size: 11vw;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--color-accent-blue);
-  opacity: 0.13;
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 1;
-}
+/* Watermark removed for cleaner look */
 
 /*  SWING ILLUSTRATION  */
-
-#mobile-illustration {
-  position: relative;
-  width: 100%;
-  background-color: var(--color-surface, #0d0b14);
-  border-bottom: 1px solid var(--color-border, #2a2745);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 1rem 2rem;
-  gap: 1.5rem;
-}
-
-#mobile-illustration .illu-label {
-  font-family: var(--font-family-mono, "IBM Plex Mono", monospace);
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-text-muted, #8899bb);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  max-width: 680px;
-}
-
-#mobile-illustration .illu-label::before,
-#mobile-illustration .illu-label::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--color-border, #2a2745);
-}
-
-#mobile-illustration .illu-caption {
-  font-family: var(--font-family-mono, "IBM Plex Mono", monospace);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  color: var(--color-text-muted, #8899bb);
-  text-align: center;
-  max-width: 42ch;
-  line-height: 1.7;
-}
-
-#mobile-illustration .illu-caption em {
-  font-style: normal;
-  color: var(--color-accent, #e85d5d);
-}
 
 [data-swing] {
   display: block;
@@ -297,12 +654,7 @@ main section:not(#main-disclaimer) {
   }
 }
 
-#mobile-illustration img,
-#mobile-illustration object {
-  width: min(950px, 92vw);
-  height: auto;
-  display: block;
-}
+/* (SVG sizing handled by #hero-illustration [data-swing] img above) */
 
 /*  SECTION LABEL  */
 .section-label {
@@ -343,15 +695,52 @@ main section:not(#main-disclaimer) {
   border: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
+}
+
+/* Accent top line — hidden at rest */
+.daily_card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+}
+
+/* Image desaturated at rest */
+.daily_card .protocol-illustration {
+  filter: grayscale(55%) brightness(0.82);
+  transition: filter 0.3s ease;
 }
 
 .daily_card:hover {
+  background-color: var(--color-head-bg);
   border-color: var(--color-accent);
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.daily_card:hover::before {
+  opacity: 1;
+}
+
+.daily_card:hover .protocol-illustration {
+  filter: grayscale(0%) brightness(1);
+}
+
+.daily_card:active {
+  transform: scale(0.985);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .daily_card-img {
@@ -460,25 +849,56 @@ main section:not(#main-disclaimer) {
   border: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
 }
-@keyframes border-pulse {
-  0% {
-    border-color: var(--color-border);
-  }
-  50% {
-    border-color: var(--color-accent);
-  }
-  100% {
-    border-color: var(--color-border);
-  }
+
+/* Accent top line — hidden at rest */
+.news_card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1;
 }
+
+/* Image desaturated at rest */
+.news-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(55%) brightness(0.82);
+  transition: filter 0.3s ease;
+}
+
 .news_card:hover {
-  animation: border-pulse 2s infinite ease-in-out;
-  border-width: 1px;
-  background-color: var(--color-surface-high);
+  background-color: var(--color-head-bg);
   border-color: var(--color-accent);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.news_card:hover::before {
+  opacity: 1;
+}
+
+.news_card:hover .news-card-img-wrap img {
+  filter: grayscale(0%) brightness(1);
+}
+
+.news_card:active {
+  transform: scale(0.985);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .news-card-img-wrap {
@@ -486,18 +906,6 @@ main section:not(#main-disclaimer) {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
-}
-
-.news-card-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.news_card:hover .news-card-img-wrap img {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
 }
 
 .news_card-body {

@@ -42,11 +42,12 @@
 }
 .faq-section > h2 {
   font-family: var(--font-family-sans);
-  font-size: 2rem;
-  font-weight: var(--font-weight-bold);
+  font-size: 2.1rem;
+  font-weight: 700;
   color: var(--color-text-strong);
   letter-spacing: -0.02em;
   margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
 
 .faq-section .section-label {
@@ -152,19 +153,20 @@
   justify-content: space-between;
   gap: 1rem;
   font-family: var(--font-family-sans);
-  font-size: 0.95rem;
-  font-weight: var(--font-weight-medium);
+  font-size: 0.98rem;
+  font-weight: 500;
   color: var(--color-text-strong);
   list-style: none;
   transition: background-color 0.15s;
+  line-height: 1.5;
 }
 
 .faq-section summary:hover {
-  background-color: rgba(232, 93, 93, 0.06);
+  background-color: rgba(255, 107, 107, 0.08);
 }
 
 .faq-section details[open] summary {
-  background-color: rgba(61, 90, 138, 0.15);
+  background-color: rgba(92, 125, 191, 0.18);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -247,8 +249,8 @@ html {
 
 .stat-cell .stat-num {
   font-family: var(--font-family-mono);
-  font-size: 1.6rem;
-  font-weight: var(--font-weight-bold);
+  font-size: 1.65rem;
+  font-weight: 700;
   color: var(--color-text-strong);
   line-height: 1;
   letter-spacing: -0.02em;
@@ -256,15 +258,16 @@ html {
 
 .stat-cell .stat-label {
   font-family: var(--font-family-mono);
-  font-size: 0.58rem;
+  font-size: 0.6rem;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .stat-cell .stat-sub {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--color-accent);
   font-family: var(--font-family-mono);
   letter-spacing: 0.06em;
@@ -278,4 +281,28 @@ html {
 #frontpage main > .section-label {
   padding: 0 1rem;
   margin: 1.25rem 1rem 0.75rem;
+}
+
+/* ── MOBILE BREAKPOINTS ──────────────────────────
+   #stat-row, #frontpage-article and #top-section
+   had no mobile overrides at all — multi-column
+   grids were cramped or overflowing on narrow screens */
+@media (max-width: 600px) {
+  #stat-row {
+    grid-template-columns: 1fr; /* stack vertically — 3 cols far too narrow */
+    margin: 0; /* flush to edges on mobile */
+  }
+
+  #frontpage-article {
+    grid-template-columns: 1fr; /* icon + text stack instead of side-by-side */
+  }
+
+  #top-section {
+    grid-template-columns: 1fr; /* remove the 1fr/5fr split on narrow screens */
+    margin: 1.5rem 1rem;
+  }
+
+  .faq-section {
+    margin: 3rem 0.75rem; /* slightly tighter on mobile */
+  }
 }

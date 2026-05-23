@@ -8,10 +8,9 @@ body {
   width: 100%;
 }
 
-/* Full-bleed body-level elements (ticker, hero, illustration live outside <main>) */
+/* Full-bleed body-level elements (ticker, hero live outside <main>) */
 #status-ticker,
-#main-disclaimer,
-#mobile-illustration {
+#main-disclaimer {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;

@@ -15,6 +15,26 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
     <title>SOMNUS — Indberet lækage</title>
+    <style>
+      :root {
+        --color-text-muted: #a3b2cc;
+        --color-text-logotype: #9dbef3;
+      }
+      body {
+        font-weight: 400;
+      }
+      .sub {
+        font-weight: 400;
+        color: var(--color-text);
+      }
+      .field-info {
+        color: var(--color-text-muted);
+      }
+      /* Range labels same fix */
+      .range-labels {
+        color: var(--color-text-muted);
+      }
+    </style>
   </head>
 
   <body id="register">
@@ -51,34 +71,35 @@
     </header>
 
     <main>
-      <h1>INDBERET</h1>
+      <h1>SKRIV DET NED</h1>
 
       <section id="form-section">
         <article id="form-info">
-          <h2>Registrering af drømlækagehændelse</h2>
+          <h2>Beretning om en drømlækagehændelse</h2>
           <p>
-            Dette formular initierer <strong>en officiel drømlækagestatus-rapport</strong>. Alle felter er <strong>obligatoriske</strong>. Unøjagtigheder kan resultere i forkert diagnose — eller permanent tab af narrativ kohærens.<br />
+            Dette er ikke et officielt klageskema. Det er et sted at sætte ord på noget der ikke rigtig vil forklares. <strong>Alle felter er obligatoriske</strong> — ikke fordi regler kræver det, men fordi ufuldendte beretninger har en tendens til
+            at forsvinde.<br />
             <strong>Behandlingstid: 3–5 søvncyklusser.</strong>
           </p>
         </article>
 
-        <h3>Formular DL — Drømlækage Nødberedskab</h3>
+        <h3>Formular DL — Drømlækage Beretning</h3>
 
         <form id="webform">
           <!-- 01 PATIENTIDENTIFIKATION -->
           <fieldset id="identification">
-            <legend>01 / Patientidentifikation</legend>
+            <legend>01 / Hvem er du i drømmene</legend>
 
             <div class="formcontainer">
               <div class="form-group">
                 <label class="blok" for="navn">Drømnavn <span class="req">*</span></label>
                 <input type="text" id="navn" name="navn" required />
-                <p class="field-info">Det navn du kender dig selv som i drømmene.</p>
+                <p class="field-info">Det navn du kender dig selv som, når du sover.</p>
               </div>
               <div class="form-group">
                 <label class="blok" for="juridisk">Juridisk navn</label>
                 <input type="text" id="juridisk" name="juridisk" />
-                <p class="field-info">Valgfrit. Reducerer præcisionen med op til 34%.</p>
+                <p class="field-info">Valgfrit. Giver en svagt dårligere præcision — op til 34%.</p>
               </div>
             </div>
 
@@ -86,7 +107,7 @@
               <div class="form-group">
                 <label class="blok" for="email">Nødkontakt-email <span class="req">*</span></label>
                 <input type="email" id="email" name="email" required />
-                <p class="field-info">Angiv en person der kan bekræfte din vågentilstand. De vil ikke blive kontaktet — feltet tjener som anker mod narrativ drift.</p>
+                <p class="field-info">En person der kan bekræfte, at du er vågnet. De vil ikke blive kontaktet — feltet fungerer som et anker mod drift.</p>
               </div>
               <div class="form-group">
                 <label class="blok" for="tlf">Telefon</label>
@@ -98,38 +119,38 @@
 
           <!-- 02 LÆKAGETYPE -->
           <fieldset id="laekagetype">
-            <legend>02 / Primær lækagetype</legend>
+            <legend>02 / Hvad slags</legend>
 
             <div class="form-group">
-              <p>Vælg den dominerende lækageform <span class="req">*</span></p>
-              <p class="field-info warn">Vælg den type som opstod først. Systemet opererer med lukkede kategorier — "andet" er ikke en gyldig klassifikation.</p>
+              <p>Hvad kom først <span class="req">*</span></p>
+              <p class="field-info warn">Vælg det der viste sig tidligst. Arkivet opererer med lukkede kategorier — "ved ikke" er ikke registrerbart endnu.</p>
 
               <div>
                 <input type="radio" id="type-kronologisk" name="laekagetype" value="kronologisk" required />
                 <label for="type-kronologisk">
                   Kronologisk kollaps
-                  <span class="option-sub">Hændelsesrækkefølge kan ikke rekonstrueres</span>
+                  <span class="option-sub">Hændelserne er der — bare i den forkerte orden</span>
                 </label>
               </div>
               <div>
                 <input type="radio" id="type-figurativ" name="laekagetype" value="figurativ" required />
                 <label for="type-figurativ">
                   Figurativ overblødning
-                  <span class="option-sub">Kendte ansigter optræder med forkert adfærd</span>
+                  <span class="option-sub">Kendte ansigter med fremmed adfærd</span>
                 </label>
               </div>
               <div>
                 <input type="radio" id="type-sceneskift" name="laekagetype" value="sceneskift" required />
                 <label for="type-sceneskift">
                   Sceneskift uden overgang
-                  <span class="option-sub">Pludselige miljøskift uden kausalitet</span>
+                  <span class="option-sub">Et sted bliver et andet, uden at der er sket noget imellem</span>
                 </label>
               </div>
               <div>
                 <input type="radio" id="type-ekstern" name="laekagetype" value="ekstern" required />
                 <label for="type-ekstern">
                   Ekstern realitetsintrusion
-                  <span class="option-sub">Vågentilstandselementer trænger ind i drømmescenarium</span>
+                  <span class="option-sub">Noget fra det vågne liv dukkede op i drømmen</span>
                 </label>
               </div>
             </div>
@@ -137,23 +158,23 @@
 
           <!-- 03 KONTAMINATIONSGRAD -->
           <fieldset id="kontamination">
-            <legend>03 / Kontaminationsgrad &amp; varighed</legend>
+            <legend>03 / Hvor tungt sad det i dig</legend>
 
             <div class="form-group">
-              <label class="blok" for="grad">Kontaminationsgrad <span class="req">*</span></label>
+              <label class="blok" for="grad">Grad <span class="req">*</span></label>
               <select id="grad" name="grad" required>
-                <option value="" disabled selected>— Vælg højeste observerede grad —</option>
-                <option value="0">Grad 0 — Ingen overblødning registreret</option>
-                <option value="1">Grad 1 — Sporadiske billeder ved opvågning</option>
-                <option value="2">Grad 2 — Vedvarende stemning i vågentilstand</option>
-                <option value="3">Grad 3 — Fragmenteret handlekraft (over 4 timer)</option>
-                <option value="4">Grad 4 — Identitetstab / systemkritisk tilstand</option>
+                <option value="" disabled selected>— Vælg den højeste du har mærket —</option>
+                <option value="0">Grad 0 — Ingenting. En tom morgen.</option>
+                <option value="1">Grad 1 — Billeder der hang lidt ved opvågning</option>
+                <option value="2">Grad 2 — En stemning der fulgte med hele dagen</option>
+                <option value="3">Grad 3 — Handlekraft var svær at finde i over 4 timer</option>
+                <option value="4">Grad 4 — Jeg vidste ikke helt hvem jeg var. Det var alvorligt.</option>
               </select>
-              <p class="field-info">Vurder omfanget af drømmemateriale der er trængt ind i vågentilstand inden for de seneste 72 timer.</p>
+              <p class="field-info">Tænk på de seneste 72 timer. Hvad var det meste du mærkede?</p>
             </div>
 
             <div class="form-group">
-              <label for="varighed">Estimeret varighed af aktiv lækage: <span id="range-value">12</span> timer</label>
+              <label for="varighed">Hvor længe varede det: <span id="range-value">12</span> timer</label>
               <input type="range" id="varighed" name="varighed" min="0" max="72" step="1" value="12" />
               <div class="range-labels">
                 <span>0 timer</span>
@@ -166,10 +187,10 @@
 
           <!-- 04 SYMPTOMER -->
           <fieldset id="symptomer">
-            <legend>04 / Observerede symptomer</legend>
+            <legend>04 / Hvad mærkede du</legend>
 
             <div class="form-group">
-              <p>Markér alle forekommende symptomer <span class="req">*</span></p>
+              <p>Sæt kryds ved det der passer <span class="req">*</span></p>
               <div>
                 <input type="checkbox" id="symptom-dejavu" name="symptom" value="dejavu" />
                 <label for="symptom-dejavu">Gentagne déjà vu-episoder</label>
@@ -180,43 +201,42 @@
               </div>
               <div>
                 <input type="checkbox" id="symptom-sprog" name="symptom" value="sprog" />
-                <label for="symptom-sprog">Besvær med at formulere sig verbalt</label>
+                <label for="symptom-sprog">Ord kom ikke i den rigtige rækkefølge</label>
               </div>
               <div>
                 <input type="checkbox" id="symptom-tyngde" name="symptom" value="tyngde" />
-                <label for="symptom-tyngde">Fysisk tyngdefornemmelse</label>
+                <label for="symptom-tyngde">En fysisk tyngde, som om kroppen ikke rigtig var din</label>
               </div>
               <div>
                 <input type="checkbox" id="symptom-arkitektur" name="symptom" value="arkitektur" />
-                <label for="symptom-arkitektur">Ukendt arkitektur i kendte rum</label>
+                <label for="symptom-arkitektur">Kendte rum, forkert geometri</label>
               </div>
               <div>
                 <input type="checkbox" id="symptom-tid" name="symptom" value="tid" />
-                <label for="symptom-tid">Tidsdistortion (timer føles som minutter)</label>
+                <label for="symptom-tid">Tid gik for langsomt eller for hurtigt</label>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="blok" for="beskriv">Beskriv lækagen <span class="req">*</span></label>
-              <p class="field-info">Beskriv lækagen i kronologisk rækkefølge. Undgå metaforer — systemet tolker dem bogstaveligt.</p>
+              <label class="blok" for="beskriv">Beskriv hvad du husker <span class="req">*</span></label>
+              <p class="field-info">Skriv det i den rækkefølge det kom til dig — ikke nødvendigvis kronologisk. Undgå metaforer. Systemet tager dem for pålydende.</p>
               <textarea id="beskriv" name="beskriv" required></textarea>
-              <p class="field-info warn">Minimum 3 sætninger. Beretninger under 3 sætninger behandles som uafsluttede og arkiveres automatisk uden sagsbehandling.</p>
+              <p class="field-info warn">Mindst 3 sætninger. Kortere beretninger arkiveres uden behandling — ikke af straf, men fordi de er for ufuldstændige til at være til hjælp.</p>
             </div>
           </fieldset>
 
           <!-- SUBMIT -->
           <p class="field-info warn submit-disclaimer">
-            Ved indsendelse accepterer du at rapporten indgår i det kollektive drømmekatalog. Anonymisering kan ikke garanteres på tværs af søvnstadier. Systemet forbeholder sig ret til at rekonstruere din narrative sammenhæng uden forudgående
-            samtykke.
+            Ved at sende dette accepterer du, at beretningen indgår i et stille fælles arkiv. Den vil ikke blive brugt imod dig. Den vil ikke blive delt. Den vil bare være der — skrevet ned, en gang for alle.
           </p>
-          <button type="submit" id="submit-button">Indsend nødrapport &#8594;</button>
+          <button type="submit" id="submit-button">Send beretning &#8594;</button>
         </form>
       </section>
 
       <section id="form-summary">
-        <h2>Sagsopsummering</h2>
+        <h2>Din beretning</h2>
         <article>
-          <p class="placeholder">Opsummering vises her efter indsendelse.</p>
+          <p class="placeholder">Det du har skrevet vises her, når du sender.</p>
         </article>
       </section>
     </main>
@@ -228,7 +248,7 @@
           <li><p class="footer-col-label">Navigation</p></li>
           <li><a href="index.html">Forside</a></li>
           <li><a href="instruction.html">Nærkontakt — Feltguide</a></li>
-          <li><a href="register.html">Indberet lækage</a></li>
+          <li><a href="register.html">Skriv det ned</a></li>
         </ul>
         <ul>
           <li><p class="footer-col-label">Om Somnus</p></li>
@@ -245,7 +265,7 @@
       </nav>
       <p class="footer-disclaimer">
         <span>SOMNUS Drømlækage Nødberedskab — Protokol v2.4</span>
-        <span>Behandlingstid: 3–5 søvncyklusser. Anonymisering kan ikke garanteres på tværs af søvnstadier.</span>
+        <span>Fragmenter behandles inden for 3–5 søvncyklusser. Intet garanteres på tværs af søvnstadier.</span>
       </p>
     </footer>
     <script src="js/burger.js"></script>

@@ -1,49 +1,49 @@
 :root {
-  /* PALETTE  */
-  --color-bg: #0d0b14; /* near-black background */
-  --color-surface: #16132a; /* slightly lighter surface */
-  --color-surface-mid: #1e1b35; /* fieldset background */
+  /* PALETTE - High Contrast for Better Readability */
+  --color-bg: #0a0814; /* deeper near-black background */
+  --color-surface: #131122; /* slightly lighter surface */
+  --color-surface-mid: #1c1a30; /* fieldset background - increased contrast */
 
-  --color-head-bg: #3d5a8a; /* blue — header/footer */
-  --color-headline-bg: #3d5a8a; /* blue — headline bars */
-  --color-accent: #e85d5d; /* coral/red — accents, req, warn */
-  --color-accent-blue: #3d5a8a; /* blue — summary / headline accent */
-  --color-accent-muted: #8899bb; /* muted blue — mist/cloud tone */
+  --color-head-bg: #4a6ba8; /* brighter blue for header/footer */
+  --color-headline-bg: #4a6ba8; /* brighter blue for headline bars */
+  --color-accent: #ff6b6b; /* brighter coral/red for better visibility */
+  --color-accent-blue: #5c7dbf; /* brighter blue for summary/headline accent */
+  --color-accent-muted: #9db4d8; /* lighter muted blue for better contrast */
 
-  --color-logotype-bg: #0a0a12;
-  --color-text-logotype: #6b8fc4;
+  --color-logotype-bg: #08070f;
+  --color-text-logotype: #7d9dd1;
 
-  --color-menu-bg: #1e1b35;
-  --color-link-bg: #2a2745;
-  --color-link-hover: #e85d5d;
-  --color-link-active: #c97a4a;
+  --color-menu-bg: #1c1a30;
+  --color-link-bg: #2d2a48;
+  --color-link-hover: #ff6b6b;
+  --color-link-active: #d98a5f;
 
-  --color-card-bg: #1e1b35;
-  --color-card-bg-inverted: #16132a;
-  --color-cta-card-bg: #3d5a8a;
-  --color-cta-card-bg-inverted: #6b8fc4;
+  --color-card-bg: #1c1a30;
+  --color-card-bg-inverted: #131122;
+  --color-cta-card-bg: #4a6ba8;
+  --color-cta-card-bg-inverted: #7d9dd1;
 
-  --color-text: #d4c4b8; /* warm pale — body text */
-  --color-text-inverted: #d4c4b8; /* same on dark bg */
-  --color-text-muted: #8899bb; /* muted blue-grey */
-  --color-text-strong: #eee8e0; /* near white */
+  --color-text: #e8dfd8; /* much brighter warm pale for body text */
+  --color-text-inverted: #e8dfd8; /* same on dark bg */
+  --color-text-muted: #a5b8d4; /* brighter muted blue-grey */
+  --color-text-strong: #faf7f4; /* very bright near white */
 
-  --color-surface-high: #252240; /* lightest surface step — hover states, elevated panels */
-  --color-border-faint: #1a1830; /* very subtle divider, barely-there borders */
+  --color-surface-high: #272543; /* brighter surface step for hover states */
+  --color-border-faint: #1f1d35; /* slightly more visible subtle divider */
 
-  --color-info-bg: #16132a; /* section backgrounds */
-  --color-border: #2a2745;
+  --color-info-bg: #131122; /* section backgrounds */
+  --color-border: #353250; /* much brighter border for better visibility */
 
-  /* TYPOGRAPHY */
-  --font-family-sans: "Outfit", sans-serif;
-  --font-family-mono: "IBM Plex Mono", monospace;
+  /* TYPOGRAPHY - Plus Jakarta Sans + Spectral */
+  --font-family-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-mono: "Spectral", Georgia, serif;
 
   --font-logotype-size: 1.1rem;
   --font-h1-size: 2rem;
   --font-h2-size: 1.25rem;
   --font-h3-size: 0.75rem;
-  --font-sub1-size: 0.85rem;
-  --followup-text-size: 0.8rem;
+  --font-sub1-size: 0.88rem;
+  --followup-text-size: 0.82rem;
 
   --font-weight-bold: 700;
   --font-weight-medium: 500;
@@ -55,10 +55,10 @@
   --border-radius-links: 2px;
   --margin-head-bottom: 0px;
 
-  /* FORM UTILITY (forms.css)  */
-  --color-field-bg: #0d0b14;
-  --color-field-border: #2a2745;
-  --color-field-focus: #6b8fc4;
+  /* FORM UTILITY (forms.css) */
+  --color-field-bg: #0a0814;
+  --color-field-border: #353250;
+  --color-field-focus: #7d9dd1;
 }
 
 /* LAYOUT UTILITIES */
@@ -71,27 +71,28 @@
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
 }
-/* LOGO GLITCH EFFECT */
-@keyframes glitch-micro {
-  0% {
-    transform: translateX(0);
+
+
+/* ATMOSPHERIC LOGO ANIMATION  */
+
+@keyframes logo-bloom {
+  0%, 100% {
+    filter: blur(0px) brightness(1);
+    transform: scale(1);
+    opacity: 1;
   }
-  20% {
-    transform: translateX(2px) skewX(5deg);
-  }
-  40% {
-    transform: translateX(-1px);
-    opacity: 0.8; /* Moved outside of transform */
-  }
-  60% {
-    transform: translateX(3px) skewX(-5deg);
-  }
-  100% {
-    transform: translateX(2px);
+  50% {
+    /* 1.5px blur is subtle enough to not look "broken" but hazy enough to feel like a dream */
+    filter: blur(1.5px) brightness(1.1); 
+    transform: scale(1.02);             
+    opacity: 0.85;
   }
 }
 
-.logo:hover {
-  display: inline-block;
-  animation: glitch-micro 0.2s infinite;
+.logo-mark-svg {
+  /* 8s duration ensures a slow, organic pulse that minimizes the 'game' feel */
+  animation: logo-bloom 8s infinite ease-in-out;
+  transform-origin: center;
+  will-change: filter, transform; /* Optimization for smoother blurring */
+}
 }

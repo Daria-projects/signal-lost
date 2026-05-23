@@ -32,8 +32,8 @@
 
 .info-text h3 {
   font-family: var(--font-family-mono);
-  font-size: 0.65rem;
-  font-weight: var(--font-weight-bold);
+  font-size: 0.68rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -47,8 +47,8 @@
 
 .info-text p,
 .info-subheadline {
-  font-size: 0.82rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.7;
   color: var(--color-text);
   margin: 0 0 1rem 0;
   padding: 0;
@@ -160,7 +160,7 @@
 }
 
 .bg-text span:nth-child(even) {
-  opacity: 0.10;
+  opacity: 0.1;
 }
 
 /* SVG */

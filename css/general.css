@@ -283,7 +283,8 @@ footer a:hover {
   }
 }
 strong {
-  font-weight: 700;
-  color: var(--color-accent-muted);
-  letter-spacing: 0.02em;
+  font-weight: 400; /* Same as body - was 700 */
+  font-style: italic; /* Italic emphasis instead of bold */
+  color: var(--color-text-strong); /* Bright - was accent-muted */
+  letter-spacing: 0.01em; /* Subtle - was 0.02em */
 }

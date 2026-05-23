@@ -6,43 +6,43 @@
   */
 
 body.mono {
-  /*  PALETTE TOKENS */
+  /*  PALETTE TOKENS - Higher Contrast Greyscale */
   --color-bg: #080808;
-  --color-surface: #111111;
-  --color-surface-mid: #1a1a1a;
-  --color-surface-high: #222222;
+  --color-surface: #0f0f0f;
+  --color-surface-mid: #181818;
+  --color-surface-high: #242424;
 
-  --color-head-bg: #2e2e2e; /* header/footer — was blue */
-  --color-headline-bg: #2e2e2e; /* headline bars */
-  --color-accent: #c0c0c0; /* coral → mid-grey */
-  --color-accent-blue: #2e2e2e; /* blue  → dark grey */
-  --color-accent-muted: #606060; /* muted blue → dark mid-grey */
+  --color-head-bg: #353535; /* header/footer — brighter */
+  --color-headline-bg: #353535; /* headline bars */
+  --color-accent: #d4d4d4; /* coral → bright grey */
+  --color-accent-blue: #353535; /* blue → dark grey */
+  --color-accent-muted: #707070; /* muted blue → mid grey */
 
   --color-logotype-bg: #080808;
-  --color-text-logotype: #505050;
+  --color-text-logotype: #606060;
 
-  --color-menu-bg: #1a1a1a;
-  --color-link-bg: #222222;
-  --color-link-hover: #c0c0c0;
-  --color-link-active: #888888;
+  --color-menu-bg: #181818;
+  --color-link-bg: #242424;
+  --color-link-hover: #d4d4d4;
+  --color-link-active: #989898;
 
-  --color-card-bg: #1a1a1a;
-  --color-card-bg-inverted: #111111;
-  --color-cta-card-bg: #2e2e2e;
-  --color-cta-card-bg-inverted: #505050;
+  --color-card-bg: #181818;
+  --color-card-bg-inverted: #0f0f0f;
+  --color-cta-card-bg: #353535;
+  --color-cta-card-bg-inverted: #606060;
 
-  --color-text: #b0b0b0;
-  --color-text-inverted: #b0b0b0;
-  --color-text-muted: #606060;
-  --color-text-strong: #e8e8e8;
+  --color-text: #c0c0c0;
+  --color-text-inverted: #c0c0c0;
+  --color-text-muted: #707070;
+  --color-text-strong: #f0f0f0;
 
-  --color-info-bg: #111111;
-  --color-border: #282828;
+  --color-info-bg: #0f0f0f;
+  --color-border: #303030;
 
   /* FORM */
   --color-field-bg: #080808;
-  --color-field-border: #282828;
-  --color-field-focus: #888888;
+  --color-field-border: #303030;
+  --color-field-focus: #989898;
 }
 
 /*  GLOBAL FILTER  (strips remaining embedded colours) */
@@ -62,68 +62,68 @@ body.mono .logo-mark-svg {
 }
 /*  BURGER LINES ─ */
 body.mono .burger .line {
-  background-color: #b0b0b0;
+  background-color: #c0c0c0;
 }
 
 /*  ALERT BADGE / PULSE DOT  */
 body.mono #alert-level {
-  background-color: rgba(192, 192, 192, 0.08);
-  border-color: #888888;
-  color: #b0b0b0;
+  background-color: rgba(212, 212, 212, 0.12);
+  border-color: #989898;
+  color: #c0c0c0;
 }
 
 /*  FIELDSET TOP BAR  */
 body.mono fieldset::before {
-  background-color: #2e2e2e;
+  background-color: #353535;
 }
 
 /* ── RANGE THUMB  */
 body.mono input[type="range"] {
-  accent-color: #888888;
+  accent-color: #989898;
 }
 
 /*  BUTTONS ─ */
 body.mono .btn-primary,
 body.mono button#submit-button {
-  background-color: #2e2e2e;
-  border-color: #555555;
-  color: #e8e8e8;
+  background-color: #353535;
+  border-color: #606060;
+  color: #f0f0f0;
 }
 
 body.mono .btn-primary:hover,
 body.mono button#submit-button:hover {
-  background-color: #555555;
-  border-color: #888888;
+  background-color: #606060;
+  border-color: #989898;
 }
 
 body.mono .btn-secondary {
-  color: #888888;
-  border-color: #303030;
+  color: #989898;
+  border-color: #353535;
 }
 
 body.mono .btn-secondary:hover {
-  border-color: #888888;
-  color: #e8e8e8;
+  border-color: #989898;
+  color: #f0f0f0;
 }
 
 body.mono .cta_btn {
-  border-color: #555555;
-  color: #c0c0c0;
+  border-color: #606060;
+  color: #d4d4d4;
 }
 
 body.mono .cta_btn:hover {
-  background-color: #2e2e2e;
-  color: #e8e8e8;
+  background-color: #353535;
+  color: #f0f0f0;
 }
 
 /*  FAQ ACCORDION  */
 body.mono .faq-section details[open] {
-  border-color: #888888;
+  border-color: #989898;
 }
 
 body.mono .faq-section summary::after {
-  color: #888888;
-  border-color: #888888;
+  color: #989898;
+  border-color: #989898;
 }
 
 /* TICKER  */

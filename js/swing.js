@@ -89,7 +89,41 @@
     });
   })();
 
-  //  3. MODALS — news card click to open
+  //  3. HERO REVEAL — asterisk click shows sub text + CTA
+  (function initHeroReveal() {
+    const asterisk = document.querySelector("#hero-h1-bottom h1 em");
+    const hero = document.getElementById("main-disclaimer");
+    const panel = document.getElementById("hero-text");
+    if (!asterisk || !hero || !panel) return;
+
+    function open() {
+      hero.classList.add("revealed");
+      asterisk.setAttribute("aria-expanded", "true");
+    }
+    function close() {
+      hero.classList.remove("revealed");
+      asterisk.setAttribute("aria-expanded", "false");
+    }
+    function toggle() {
+      hero.classList.contains("revealed") ? close() : open();
+    }
+
+    asterisk.addEventListener("click", toggle);
+
+    // Keyboard: Enter / Space activate; Escape closes
+    asterisk.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle();
+      }
+      if (e.key === "Escape") close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  })();
+
+  //  4. MODALS — news card click to open
   (function initModals() {
     const overlays = document.querySelectorAll(".news-modal-overlay");
 

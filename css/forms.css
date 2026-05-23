@@ -95,13 +95,13 @@ legend {
 label.blok,
 label[for] {
   display: block;
-  font-family: var(--font-family-mono);
-  font-size: 0.62rem;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.1em;
+  font-family: var(--font-family-sans);
+  font-size: 0.95rem; /* Larger - was 0.62rem */
+  font-weight: 600; /* Semibold - was 500 (medium) */
+  letter-spacing: 0.03em; /* Less extreme - was 0.1em */
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 0.35rem;
+  color: var(--color-text-strong); /* Brighter - was muted */
+  margin-bottom: 0.5rem; /* More space - was 0.35rem */
 }
 
 .req {
@@ -233,11 +233,13 @@ input[type="range"] {
 /*  FIELD INFO  */
 
 .field-info {
-  font-family: var(--font-family-mono);
-  font-size: 0.68rem;
+  font-family: var(--font-family-sans);
+  font-size: 0.85rem; /* Slightly larger - was 0.68rem */
+  font-weight: 300; /* Light weight - ethereal */
+  font-style: italic; /* Softer, less technical */
   color: var(--color-text-muted);
-  line-height: 1.6;
-  margin-top: 0.35rem;
+  line-height: 1.5;
+  margin-top: 0.4rem;
 }
 
 .field-info.warn {
